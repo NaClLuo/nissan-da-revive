@@ -550,21 +550,20 @@ int carWash = CommonConstant.carwashIndex.get(weather.getWashCarInfo()).intValue
 
 | 文件 | 说明 |
 |---|---|
-| `NissanDA_revive.apk` | 你自己的构建产物。从官方原版升级需先卸载（签名不同） |
-| `da-revive-patchpack-<日期>.zip` | CI 产出的补丁 smali 包 |
-| `patches/da-revive.patch` | 对原包的 unified diff |
+| `apktool_src/` | 完整 apktool 工程，已含全部改动 |
+| `NissanDA_revive.apk` | `tools/build.sh` 的产物。从官方原版升级需先卸载（签名不同）；覆盖安装旧补丁包可以 |
 | `日产DA投屏逆向分析报告.md` | 本报告 |
 | `architecture.png` | 架构图 |
 
-报告成文时的构建校验（该构建已不再分发，仅作记录）：
+构建校验：
 
 ```
-SHA-256: 7ce74d025fc37a01436402e06636f02ff31ab3a7c985cc5018493123b1060358
+SHA-256: 每次构建见 release 说明（apktool 重打包不保证字节级可复现）
 签名方案: v1 + v2 + v3
-签名主体: CN=Nissan DA Android16 Patch（当时使用的自签名证书）
+签名主体: CN=Nissan DA Android16 Patch（tools/nissan16.keystore）
 ```
 
-`tools/apply.sh` 首次运行会自动生成一把新的 keystore，签名主体为 `CN=DA Revive`，因此你构建出的包与上面的哈希不同，也不能和旧包互相覆盖——升级前先卸载。
+签名证书沿用最初那版补丁的 `nissan16.keystore`，所以新旧补丁包可以互相覆盖安装，不用卸载。
 
 > 重要提醒：这个补丁解决的是“App 在 Android 16 上能装、能打开投屏页、不再限制应用”这三件事，**不解决“Android 16 系统本身没有 Miracast”这件事**。前者是 App 层，后者是系统层。实机测试时请先确认手机系统设置里是否存在“无线显示/屏幕共享/投屏”入口。
 

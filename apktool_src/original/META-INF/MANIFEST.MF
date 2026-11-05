@@ -1,0 +1,539 @@
+Manifest-Version: 1.0
+Built-By: Generated-by-ADT
+Created-By: Android Gradle 2.3.3
+
+Name: res/drawable/bg_day_weather_overcloudy_log.png
+SHA-256-Digest: N0TB+Z6/8Jb+7hqAij6DcmvM0lknz6kOXf6p9eyTWnY=
+
+Name: res/drawable-xxhdpi-v4/star_on.png
+SHA-256-Digest: LAOP5MMjxjMCiHXmmnQeC7fEOp8q49esb8+gmOdQ9dQ=
+
+Name: res/layout-land/overlay.xml
+SHA-256-Digest: vQujkVDVPaOyIciYGNvVk0Q8QTtGIOG58tfVCkcSZqE=
+
+Name: res/drawable/guide_anim_bg_02.png
+SHA-256-Digest: K6wO9SwuV+DocSLvvuRjwV8mfpblW5s3ViU1PtIQR1I=
+
+Name: res/drawable-xxhdpi-v4/weather_line.png
+SHA-256-Digest: 4loFQTdyDymSUZzp8bSv4zFrwHJWpviM2afZKgUBctM=
+
+Name: res/layout-land/guide_anim.xml
+SHA-256-Digest: kurPG2m/XnOP2wtREVF49K50bRbA0Tzs+5w8MxHz04U=
+
+Name: res/layout/overlay.xml
+SHA-256-Digest: vQujkVDVPaOyIciYGNvVk0Q8QTtGIOG58tfVCkcSZqE=
+
+Name: res/drawable-xxhdpi-v4/wash_on.png
+SHA-256-Digest: GPj/8ys6dMXsR0h2Y43R8v3NHtBKaFC85RK2Oo0Beas=
+
+Name: res/drawable/exit.png
+SHA-256-Digest: rn1Ivnwy58e2t12J212mQYHT4N+MDs3BIJffjQ6Ofeg=
+
+Name: res/drawable/wash_bg.png
+SHA-256-Digest: Fr8ttikfx7qcD8AV6BnGg4oCT4zYiLulT8tJm+jzQ3E=
+
+Name: res/drawable/webback_style.xml
+SHA-256-Digest: Mac7XVfyFct+QUQvU+V86iH2rqu9Dhe3sWq9XpHHaqs=
+
+Name: res/layout/city_list.xml
+SHA-256-Digest: 35pVoYSKWAVb0QgX9PeUhaWB3OVzJcQG9Cu79Mv5rro=
+
+Name: res/drawable-xxhdpi-v4/wash_bg.png
+SHA-256-Digest: Fr8ttikfx7qcD8AV6BnGg4oCT4zYiLulT8tJm+jzQ3E=
+
+Name: res/drawable/kuwoyinyue.png
+SHA-256-Digest: dgYhCRg8isgYVNahbZiqWihBep7judaeBrQu/FX/+l4=
+
+Name: res/drawable-xxhdpi-v4/tuniu.png
+SHA-256-Digest: zCWfwEThQjRocxzqvnJl0b5xV+Mt1yT+9tK0egMIqdU=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_04.png
+SHA-256-Digest: uVzdc34KgF1Crm8SRlnySgqiXXcXkPh0AGB74PITJv8=
+
+Name: res/drawable/rain.png
+SHA-256-Digest: HJLxDDhxYk6Gn8pKUMS7MCvtxcfC3cbA7bzZoIGF3nE=
+
+Name: res/drawable/change_press.png
+SHA-256-Digest: +hG4EZzGCSBLzQq9qsV1ks6qRSgnUJrlotVO6gPZtkY=
+
+Name: res/drawable-xxhdpi-v4/location_icon.png
+SHA-256-Digest: p46Jw/SRIV4Pz3823gAJQe3XwzFQJzeWWmGEo5eE7uY=
+
+Name: res/drawable-xxhdpi-v4/take_back.png
+SHA-256-Digest: PuujMhN7gWv2WzyfP+jUw4XOJlyQ5XkgKJhISB1DxAk=
+
+Name: res/drawable-xxhdpi-v4/weather_bg_white.png
+SHA-256-Digest: 96Ap8rnRbz8C2dz27kgvvFSTxMN04JIGfwcuccLuuds=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_heavyrainstorm_log.png
+SHA-256-Digest: 1qLKjZp5hR6LQO/ekc1EsgLAz579Y83cTNfnIqSfe5c=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_freezingrain_log.png
+SHA-256-Digest: R/oWsBLNSuswmGFZkZh0SaPdFibOW3oRRXF1r+RGRDw=
+
+Name: res/drawable-xxhdpi-v4/star_ff.png
+SHA-256-Digest: WEuDCI4bvYYlIFS1Anjuj6SZbAILiVYNMA9wkgON3nA=
+
+Name: res/layout/weather.xml
+SHA-256-Digest: NDYu5/B6qqKNwxVgSn3b4lSvA4V/szTpANvBktYV7uA=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_sandstorm_log.png
+SHA-256-Digest: KtWqbp943H6vY4A0XeedaFhH49eT76fP8/j3Uwxr6ws=
+
+Name: res/drawable/home1.png
+SHA-256-Digest: 1jZs33DgH3A3ZVQg2KyC6XmaXaWa4/jIiZCrNlEzSbk=
+
+Name: res/drawable/guide_anim_bg_04.png
+SHA-256-Digest: uVzdc34KgF1Crm8SRlnySgqiXXcXkPh0AGB74PITJv8=
+
+Name: res/layout-land/weather.xml
+SHA-256-Digest: NDYu5/B6qqKNwxVgSn3b4lSvA4V/szTpANvBktYV7uA=
+
+Name: assets/fonts/Roboto-Thin.ttf
+SHA-256-Digest: KENmna8DBzP2t8VBqY67/1zlwtjLrkI72NJ4o24Wk5k=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_fog_log.png
+SHA-256-Digest: z03fGDmHKuSYVcPpC84Rn3MOtwHVR8RADLSdRnL0IHo=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_02.png
+SHA-256-Digest: K6wO9SwuV+DocSLvvuRjwV8mfpblW5s3ViU1PtIQR1I=
+
+Name: resources.arsc
+SHA-256-Digest: JifisLoiJQ41v6+3Uze3ZX8LQOQpJ6yHshLK7tvUhx0=
+
+Name: assets/city.xml
+SHA-256-Digest: Lf3qtrtbLA+p/P7PNIDVC+LIe16AJRjA5amR8Wru/9E=
+
+Name: res/drawable/mirror_bg.9.png
+SHA-256-Digest: aYy+k8BDF0f9kLZaMFYGiaTeHQXqmCTAh/McV53nGr8=
+
+Name: lib/x86/libtencentloc.so
+SHA-256-Digest: fnE8Rk0uEoUJi4KVPSED5D5DvULfzb3qzMDPsRW54VU=
+
+Name: res/drawable/change.png
+SHA-256-Digest: IGkLQxyU08JgcEeROfTRTusRKojorFKbDu7RWWwAlVQ=
+
+Name: res/drawable/ximalaya.png
+SHA-256-Digest: TlJMh8bi89o7PjETKcifjS8YtD7UboSFyl6l84KFd2Q=
+
+Name: res/layout/guide_anim.xml
+SHA-256-Digest: kurPG2m/XnOP2wtREVF49K50bRbA0Tzs+5w8MxHz04U=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_littlesnow_log.png
+SHA-256-Digest: y7PTA6cDKIq2XmWg+WukHYa7T4uXJ1YPxIrVump68BM=
+
+Name: res/drawable/bg_day_weather_heavyrain_log.png
+SHA-256-Digest: X8SX0DAuBOxjtZQ4nywwPiBAHhtAr2MWBI2jFU+ZzEo=
+
+Name: res/drawable/bg_day_weather_sandstorm_log.png
+SHA-256-Digest: KtWqbp943H6vY4A0XeedaFhH49eT76fP8/j3Uwxr6ws=
+
+Name: res/drawable-xxhdpi-v4/weberror2.png
+SHA-256-Digest: Dr2YRRbxjSfT4oRisnjX5Ek0grw6vPLhz1/BO6gP3WM=
+
+Name: AndroidManifest.xml
+SHA-256-Digest: dpHyNbJAanBQfC3P/kDrZG4pSLCtMB2YaWiWfkA0VPg=
+
+Name: res/drawable/toutiao.png
+SHA-256-Digest: 9sOioNcXp4fPLUOUST5JiVO/evUGkQZRLqB5QqBUyQA=
+
+Name: lib/armeabi/libtencentloc.so
+SHA-256-Digest: Ea66zDRFtgfP37T5EiFvOMzpFdZH/TtibiBuRO9H6iI=
+
+Name: res/drawable/refresh_press.png
+SHA-256-Digest: nSil17T8p42ByJG/vjBEAofxgjnn00QoROBjk6aN0N4=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_rain_log.png
+SHA-256-Digest: 6Xh5AlpEjESFbkaAdgmXVImV4x7O1+hwIsKhjpwZitU=
+
+Name: res/drawable/bg_day_weather_heavyrainstorm_log.png
+SHA-256-Digest: 1qLKjZp5hR6LQO/ekc1EsgLAz579Y83cTNfnIqSfe5c=
+
+Name: res/drawable/weather_refresh_style.xml
+SHA-256-Digest: k+sHseilKQpe//Q1wxwcGwMa1KZLGooptUzxJ85AXh4=
+
+Name: res/layout-land/list_item.xml
+SHA-256-Digest: YP6dbkhh3DtNUSKdAqMFAOO5dFgJGkxvNT5mdvCfr+0=
+
+Name: res/drawable/bg_day_weather_fog_log.png
+SHA-256-Digest: z03fGDmHKuSYVcPpC84Rn3MOtwHVR8RADLSdRnL0IHo=
+
+Name: res/drawable/weberror2.png
+SHA-256-Digest: Dr2YRRbxjSfT4oRisnjX5Ek0grw6vPLhz1/BO6gP3WM=
+
+Name: res/drawable-xxhdpi-v4/temp_60.png
+SHA-256-Digest: 5eILxKooQIyuj/1NfJuRrzETWXSasJg0IT44tR7L/ew=
+
+Name: res/layout/guide_anim_item.xml
+SHA-256-Digest: 0hZ7S5g3MrPkrCNt5qR6+vDrzdKKzLFDwmtRYKfWcS8=
+
+Name: res/drawable/ic_weather.png
+SHA-256-Digest: wWcdppY1hOyXf56TwKXpHBPpSAHd/GgFlesvL5/GFoU=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_sunny_log.png
+SHA-256-Digest: SVV+RBd2KVwVmtN1k/PTKOcVcox/4oyrUP4zDvh6eFI=
+
+Name: res/drawable-xxhdpi-v4/guide_no_btn_nor.png
+SHA-256-Digest: 01SppCg/t+tiajxBUxxotoqzNHSacL7oGDdqKZCK3hU=
+
+Name: res/drawable/elong.png
+SHA-256-Digest: wSvTl6pQPk+YZzpslSmejz2uQzPqQIE2iYdkjuz0nN8=
+
+Name: res/layout-land/webview_error.xml
+SHA-256-Digest: qfVyUHs1uaqv5AXIael3VQrYBgG5FrF8NbNGC3FGrwA=
+
+Name: res/drawable-xxhdpi-v4/weatherback.png
+SHA-256-Digest: N8hDK9+qw8UjtX0c8DRsHCk0FH/7AACNGm7Enajk0uY=
+
+Name: res/drawable/bg_day_weather_bigrainstorm_log.png
+SHA-256-Digest: CkrwxqI5/xI6qpZPCLL97oZekTJDQU1WgcTBUhOSOFg=
+
+Name: res/drawable/take_back.png
+SHA-256-Digest: PuujMhN7gWv2WzyfP+jUw4XOJlyQ5XkgKJhISB1DxAk=
+
+Name: res/layout-land/guide_anim_item.xml
+SHA-256-Digest: 0hZ7S5g3MrPkrCNt5qR6+vDrzdKKzLFDwmtRYKfWcS8=
+
+Name: res/drawable/bg_day_weather_snow_log.png
+SHA-256-Digest: wnoAfu2QSK8ydrod88dmk3iBqQMhJkzClFRWi6cpros=
+
+Name: res/drawable/star_on.png
+SHA-256-Digest: LAOP5MMjxjMCiHXmmnQeC7fEOp8q49esb8+gmOdQ9dQ=
+
+Name: res/drawable-xxhdpi-v4/guide_no_btn_sel.png
+SHA-256-Digest: 5Tjnna5Gd6/EFgzIxKsUH9knRRD1D1M+Acu9VtxEhNM=
+
+Name: res/drawable-xxhdpi-v4/webback_press.png
+SHA-256-Digest: uzKHiwe1x6vGuH+ztxhXnfbSJw7KCpg++yF3y4qVtdo=
+
+Name: res/layout/webview_error.xml
+SHA-256-Digest: qfVyUHs1uaqv5AXIael3VQrYBgG5FrF8NbNGC3FGrwA=
+
+Name: res/drawable/wash_on.png
+SHA-256-Digest: GPj/8ys6dMXsR0h2Y43R8v3NHtBKaFC85RK2Oo0Beas=
+
+Name: res/drawable/bg_day_weather_strongsandstorm_log.png
+SHA-256-Digest: ehpmh+G0ZiD5GCUBp0eUWiBc+c3XKCANg2LdTJjomMg=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_strongsandstorm_log.png
+SHA-256-Digest: ehpmh+G0ZiD5GCUBp0eUWiBc+c3XKCANg2LdTJjomMg=
+
+Name: res/layout/activity_main.xml
+SHA-256-Digest: stv6JT2/VX3MqJFww1tgkjA9tcUzy790ulBNG/UCSW0=
+
+Name: res/layout-land/activity_main.xml
+SHA-256-Digest: mB2j7egaBmtR7ljOXU87ZkTYAE9665ATYzJwzDciFjM=
+
+Name: res/layout-land/main_desk.xml
+SHA-256-Digest: GsWUU/eyoDT624TVzzY0/7vQLEKwD1QDkn8sR9Q3FD4=
+
+Name: res/drawable/page01_select.png
+SHA-256-Digest: u/OBCaTB5jNvMYAuR9I35pQ10u52JXIbulQnBk+CYdc=
+
+Name: res/drawable/bg_day_weather_unknow.png
+SHA-256-Digest: 0UbeQCcEjbq9d+5MDTk8ly0oqBKV1Wbwt8gGUYjN52Y=
+
+Name: lib/arm64-v8a/libtencentloc.so
+SHA-256-Digest: HqQS9px7FxOLPpm4JgRl1+i0tdF4ptaI29hJQxWLVw8=
+
+Name: res/drawable-xxhdpi-v4/guide_yes_btn_sel.png
+SHA-256-Digest: GwqWBNte7qIy8phVMqtJodNWqEhyJlByR7+P+wIV338=
+
+Name: res/drawable-xxhdpi-v4/refresh_press.png
+SHA-256-Digest: nSil17T8p42ByJG/vjBEAofxgjnn00QoROBjk6aN0N4=
+
+Name: res/layout/list_item.xml
+SHA-256-Digest: YP6dbkhh3DtNUSKdAqMFAOO5dFgJGkxvNT5mdvCfr+0=
+
+Name: res/layout/main_desk.xml
+SHA-256-Digest: LZLbnIpeIdEfAdmHLYOKJzfMfukm6L/WWKNRiOjOv50=
+
+Name: res/drawable/guide_anim_bg_01.png
+SHA-256-Digest: CU7pPosZoFU5kzH3ZmzkdOm3nQ9d1NZdNBaEbKzEUtg=
+
+Name: assets/thirtypartyappsconfig
+SHA-256-Digest: 6gL2K+9/ZcFkFm8sxFPqVB76GN8ezkV3MIvZWVbs+4Q=
+
+Name: res/layout-land/webview.xml
+SHA-256-Digest: 1ANjJ5SP+hRjzM2lzdcD9COsVO46MAEzY+r8e3Xv9Vo=
+
+Name: res/drawable/tuniu.png
+SHA-256-Digest: zCWfwEThQjRocxzqvnJl0b5xV+Mt1yT+9tK0egMIqdU=
+
+Name: lib/armeabi-v7a/libtencentloc.so
+SHA-256-Digest: Ag2zbawiq5H15hErwyeOTf4NQoM8iYoUE4oSs+ROTzg=
+
+Name: res/drawable-xxhdpi-v4/rain.png
+SHA-256-Digest: HJLxDDhxYk6Gn8pKUMS7MCvtxcfC3cbA7bzZoIGF3nE=
+
+Name: res/drawable-xxhdpi-v4/guide_yes_btn_nor.png
+SHA-256-Digest: Or4c7li+QDoSYO/5s0FMBok1Z0M64iU1aHJq0ltDpgE=
+
+Name: res/drawable-xxhdpi-v4/qqnews.png
+SHA-256-Digest: 6HGtc1jHKoIvy+LfS96POYnuuBZUX51c8ENcughcWGI=
+
+Name: res/drawable-xxhdpi-v4/weather_bg.png
+SHA-256-Digest: /eFk3nm+gYB915nznaMGVSz1t6kndtOTYIn7/8DS32Q=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_03.png
+SHA-256-Digest: IQcMj/XsdYg4ItPFliwAGvLmbQMwWifho9DZ6I1p3Hc=
+
+Name: res/drawable-xxhdpi-v4/mirror_bg.9.png
+SHA-256-Digest: aYy+k8BDF0f9kLZaMFYGiaTeHQXqmCTAh/McV53nGr8=
+
+Name: res/drawable-xxhdpi-v4/exit.png
+SHA-256-Digest: rn1Ivnwy58e2t12J212mQYHT4N+MDs3BIJffjQ6Ofeg=
+
+Name: res/drawable-xxhdpi-v4/today_bg.png
+SHA-256-Digest: pggc3xI95yawV6Go361tK4Jx7bVOaTICiRXvmbfmk2Y=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_bigrainstorm_log.png
+SHA-256-Digest: CkrwxqI5/xI6qpZPCLL97oZekTJDQU1WgcTBUhOSOFg=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_thundershowers_log.png
+SHA-256-Digest: uVnaupDTVdVUZ5J9iCuLrQ7v1tho2p1384yqzyTOvC0=
+
+Name: res/drawable/webback_press.png
+SHA-256-Digest: uzKHiwe1x6vGuH+ztxhXnfbSJw7KCpg++yF3y4qVtdo=
+
+Name: res/drawable/refresh.png
+SHA-256-Digest: QH2n0g63qXuonBlxZ994l61wEC/xmnNBJVyUw1i6r8U=
+
+Name: res/layout-land/city_list.xml
+SHA-256-Digest: 35pVoYSKWAVb0QgX9PeUhaWB3OVzJcQG9Cu79Mv5rro=
+
+Name: res/drawable/guide_yes_btn_nor.png
+SHA-256-Digest: Or4c7li+QDoSYO/5s0FMBok1Z0M64iU1aHJq0ltDpgE=
+
+Name: res/drawable/bg_day_weather_rainstorm_log.png
+SHA-256-Digest: vT0nMWb7VszX5Zzd9Wpo5x6pV5taX/jvU853b0R7Rog=
+
+Name: res/drawable-xxhdpi-v4/toutiao.png
+SHA-256-Digest: 9sOioNcXp4fPLUOUST5JiVO/evUGkQZRLqB5QqBUyQA=
+
+Name: res/drawable/guide_anim_bg_03.png
+SHA-256-Digest: IQcMj/XsdYg4ItPFliwAGvLmbQMwWifho9DZ6I1p3Hc=
+
+Name: res/drawable-xxhdpi-v4/weatherback_press.png
+SHA-256-Digest: dVCFNf1rPJ3nYsVbGu1iodDTyon0dMdgm5xqGCNukcY=
+
+Name: res/drawable/disclaimer_no_btn.xml
+SHA-256-Digest: PcmbmLvQm1oEkfs0izflnXBVMzQKu4eWJtfGHd9UiRo=
+
+Name: res/drawable/disclaimer_yes_btn.xml
+SHA-256-Digest: /G1XhXn7RG7pkIQx89qvmZmeGqTKPWWYP8qUN1RpUo8=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_floatingdust_log.png
+SHA-256-Digest: QQz/4nsUhfZQXkxWCfNJZOkW1mVyGD6/XWIhr1jfc/c=
+
+Name: res/drawable/bg_day_weather_freezingrain_log.png
+SHA-256-Digest: R/oWsBLNSuswmGFZkZh0SaPdFibOW3oRRXF1r+RGRDw=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_rainstorm_log.png
+SHA-256-Digest: vT0nMWb7VszX5Zzd9Wpo5x6pV5taX/jvU853b0R7Rog=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_thundershowerswithhail_log
+ .png
+SHA-256-Digest: cL9qtjxZsf154lWvFh9Sg6krt/acY0KTqtJ6Idq3xqU=
+
+Name: res/drawable/bg_day_weather_heavysnow_log.png
+SHA-256-Digest: n2hiVp6Bx1LYchAi5duvreCNichpKRH5k5Qjy7Q/P4g=
+
+Name: res/drawable/guide_anim_bg_05.png
+SHA-256-Digest: kX9n8wxLM7Jmd5EySh9xTbjx5Cjw1XPqEAnCUR4wQEI=
+
+Name: res/drawable/guide_no_btn_sel.png
+SHA-256-Digest: 5Tjnna5Gd6/EFgzIxKsUH9knRRD1D1M+Acu9VtxEhNM=
+
+Name: res/drawable/meituan.png
+SHA-256-Digest: zxAQVpXi6p7qL5Mg4z+VMoFrf4dZXznZu/QovoeesuQ=
+
+Name: res/drawable/webback.png
+SHA-256-Digest: AJNSmZyywas9gY5GJk7ttbREgEl8NIiljS72qPKImzw=
+
+Name: lib/x86_64/libtencentloc.so
+SHA-256-Digest: MzdkqyfjtSPCAqAQQPonXms7s6eu7v5pmDF00XxajNY=
+
+Name: res/drawable/page01.png
+SHA-256-Digest: to8XIRQPbd1BqfrsYsSf/ymGdTPYbPMzlvUlbBE0g7E=
+
+Name: res/drawable/weather_back_style.xml
+SHA-256-Digest: SzIwYObuvN9W+N8QAboHa5kflyPIhg4Td1MzUZdOGOY=
+
+Name: res/drawable/icon.png
+SHA-256-Digest: LG8yqoAZizyW87tDfXeRysLtmzEwkK9UGe27vVKzP/o=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_heavysnow_log.png
+SHA-256-Digest: n2hiVp6Bx1LYchAi5duvreCNichpKRH5k5Qjy7Q/P4g=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_sleet_log.png
+SHA-256-Digest: YybKgtgaBL/W+cj9uwI7Y82f3kwYxoRFYrGU5Rjdu6A=
+
+Name: res/drawable-xxhdpi-v4/page01.png
+SHA-256-Digest: mvEZtvTY37nZ+vweuRbmK6gl14adXX4Q9xTMRfvnYB0=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_overcloudy_log.png
+SHA-256-Digest: N0TB+Z6/8Jb+7hqAij6DcmvM0lknz6kOXf6p9eyTWnY=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_unknow.png
+SHA-256-Digest: 0UbeQCcEjbq9d+5MDTk8ly0oqBKV1Wbwt8gGUYjN52Y=
+
+Name: res/drawable/ic_music.png
+SHA-256-Digest: ihQ6q4ID39VIJzfpAstNiNiRtSmSco7sMUA79CUZJ4s=
+
+Name: assets/fonts/Roboto-ThinItalic.ttf
+SHA-256-Digest: VQMe8U9sSZRyVatuDvcRKTjLHsuQP4VVPdx4QkIqWEE=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_01.png
+SHA-256-Digest: CU7pPosZoFU5kzH3ZmzkdOm3nQ9d1NZdNBaEbKzEUtg=
+
+Name: res/drawable/temp_60.png
+SHA-256-Digest: 5eILxKooQIyuj/1NfJuRrzETWXSasJg0IT44tR7L/ew=
+
+Name: assets/fonts/Roboto-Bold.ttf
+SHA-256-Digest: JFcVAxQHYCQJJNzRI493580EVMDYsHk5kM76L61xRx8=
+
+Name: res/drawable/bg_day_weather_sunny_log.png
+SHA-256-Digest: SVV+RBd2KVwVmtN1k/PTKOcVcox/4oyrUP4zDvh6eFI=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_06.jpg
+SHA-256-Digest: S+eUrS/hV98aR8VaFohUytynGgtozK3vqZeNqSOAxu8=
+
+Name: res/drawable/bg_day_weather_thundershowerswithhail_log.png
+SHA-256-Digest: cL9qtjxZsf154lWvFh9Sg6krt/acY0KTqtJ6Idq3xqU=
+
+Name: res/drawable/bg_day_weather_sleet_log.png
+SHA-256-Digest: YybKgtgaBL/W+cj9uwI7Y82f3kwYxoRFYrGU5Rjdu6A=
+
+Name: res/drawable-xxhdpi-v4/change.png
+SHA-256-Digest: IGkLQxyU08JgcEeROfTRTusRKojorFKbDu7RWWwAlVQ=
+
+Name: res/drawable/ic_news.png
+SHA-256-Digest: c21gSqKnWdxaB8lYKgBZvpeT6vrIFoBRBUQvEErFy7E=
+
+Name: res/drawable-xxhdpi-v4/change_press.png
+SHA-256-Digest: +hG4EZzGCSBLzQq9qsV1ks6qRSgnUJrlotVO6gPZtkY=
+
+Name: res/drawable/weather_line.png
+SHA-256-Digest: 4loFQTdyDymSUZzp8bSv4zFrwHJWpviM2afZKgUBctM=
+
+Name: res/drawable-xxhdpi-v4/icon.png
+SHA-256-Digest: 04xQFtXnfmOw6ShHhnrYVB9Rqi21cpLpADG6Ob2u+9w=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_snow_log.png
+SHA-256-Digest: wnoAfu2QSK8ydrod88dmk3iBqQMhJkzClFRWi6cpros=
+
+Name: res/drawable/bg_day_weather_floatingdust_log.png
+SHA-256-Digest: QQz/4nsUhfZQXkxWCfNJZOkW1mVyGD6/XWIhr1jfc/c=
+
+Name: res/drawable/location_icon.png
+SHA-256-Digest: p46Jw/SRIV4Pz3823gAJQe3XwzFQJzeWWmGEo5eE7uY=
+
+Name: res/drawable-xxhdpi-v4/weberror1.png
+SHA-256-Digest: gkpst3Aqo7Qyg4LwyljkCkU1UiNFyffRPW5QnvQhHIg=
+
+Name: res/layout/daremoteview.xml
+SHA-256-Digest: xX1lrHLnNWRCjDNxEtYNK49wg9640UPwT91v2ZvxpKQ=
+
+Name: res/drawable-xxhdpi-v4/meituan.png
+SHA-256-Digest: zxAQVpXi6p7qL5Mg4z+VMoFrf4dZXznZu/QovoeesuQ=
+
+Name: res/drawable/guide_no_btn_nor.png
+SHA-256-Digest: 01SppCg/t+tiajxBUxxotoqzNHSacL7oGDdqKZCK3hU=
+
+Name: res/drawable-xxhdpi-v4/page01_select.png
+SHA-256-Digest: dkqvuiLB1G4kze23TLMflOfR0gqxRdqoRsM/qWgIe9I=
+
+Name: res/drawable/ic_navigation.png
+SHA-256-Digest: 1kieROSKaz43hdkaiLMkq7Ms+tbLmSkRdw9cVT+9eqQ=
+
+Name: res/drawable/bg.png
+SHA-256-Digest: FCmQ6U3OAvExHKl4VYRIKAKNzU969fbxdKDJmO/q7p8=
+
+Name: res/layout/main_desk_applink.xml
+SHA-256-Digest: UCaf021MEvibSeyrq9pCq8m1d3/sWVRfEK/cPJi0FVI=
+
+Name: res/drawable/bg_day_weather_thundershowers_log.png
+SHA-256-Digest: uVnaupDTVdVUZ5J9iCuLrQ7v1tho2p1384yqzyTOvC0=
+
+Name: res/drawable/weather_bg.png
+SHA-256-Digest: /eFk3nm+gYB915nznaMGVSz1t6kndtOTYIn7/8DS32Q=
+
+Name: res/drawable-xxhdpi-v4/home1.png
+SHA-256-Digest: 1jZs33DgH3A3ZVQg2KyC6XmaXaWa4/jIiZCrNlEzSbk=
+
+Name: res/drawable-xxhdpi-v4/ximalaya.png
+SHA-256-Digest: TlJMh8bi89o7PjETKcifjS8YtD7UboSFyl6l84KFd2Q=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_moderate_log.png
+SHA-256-Digest: DqDM9O8fd5QI/JWRoO/xjc4jdYmKQYmwGQilgy9ZZ4w=
+
+Name: res/drawable/weberror1.png
+SHA-256-Digest: gkpst3Aqo7Qyg4LwyljkCkU1UiNFyffRPW5QnvQhHIg=
+
+Name: res/drawable/qqnews.png
+SHA-256-Digest: 6HGtc1jHKoIvy+LfS96POYnuuBZUX51c8ENcughcWGI=
+
+Name: res/drawable-xxhdpi-v4/bg_day_weather_heavyrain_log.png
+SHA-256-Digest: X8SX0DAuBOxjtZQ4nywwPiBAHhtAr2MWBI2jFU+ZzEo=
+
+Name: res/drawable/bg_day_weather_moderate_log.png
+SHA-256-Digest: DqDM9O8fd5QI/JWRoO/xjc4jdYmKQYmwGQilgy9ZZ4w=
+
+Name: res/layout/webview.xml
+SHA-256-Digest: 1ANjJ5SP+hRjzM2lzdcD9COsVO46MAEzY+r8e3Xv9Vo=
+
+Name: res/drawable/guide_yes_btn_sel.png
+SHA-256-Digest: GwqWBNte7qIy8phVMqtJodNWqEhyJlByR7+P+wIV338=
+
+Name: res/drawable/weather_bg_white.png
+SHA-256-Digest: 96Ap8rnRbz8C2dz27kgvvFSTxMN04JIGfwcuccLuuds=
+
+Name: res/drawable/weatherback_press.png
+SHA-256-Digest: dVCFNf1rPJ3nYsVbGu1iodDTyon0dMdgm5xqGCNukcY=
+
+Name: res/drawable-xxhdpi-v4/refresh.png
+SHA-256-Digest: QH2n0g63qXuonBlxZ994l61wEC/xmnNBJVyUw1i6r8U=
+
+Name: res/drawable-xxhdpi-v4/bg.png
+SHA-256-Digest: FCmQ6U3OAvExHKl4VYRIKAKNzU969fbxdKDJmO/q7p8=
+
+Name: res/drawable/star_ff.png
+SHA-256-Digest: WEuDCI4bvYYlIFS1Anjuj6SZbAILiVYNMA9wkgON3nA=
+
+Name: res/drawable-xxhdpi-v4/guide_anim_bg_05.png
+SHA-256-Digest: kX9n8wxLM7Jmd5EySh9xTbjx5Cjw1XPqEAnCUR4wQEI=
+
+Name: res/drawable/bs_progressbar_horizontal.xml
+SHA-256-Digest: ZTt5vl/ZCrK1kbmSAZMS45Qmt8xHmd5yhybLy+jMmCc=
+
+Name: res/drawable/ctrip.png
+SHA-256-Digest: +AyFvZVKCj1dlhyvvsfZC+3joancJ+hjMyWt71XqJEs=
+
+Name: res/layout-land/main_desk_applink.xml
+SHA-256-Digest: djLo0k9GBpb9pCPsdkIjjjGbxnhrW8X99Dd5KOCcOgY=
+
+Name: res/drawable/guide_anim_bg_06.jpg
+SHA-256-Digest: S+eUrS/hV98aR8VaFohUytynGgtozK3vqZeNqSOAxu8=
+
+Name: res/drawable-xxhdpi-v4/webback.png
+SHA-256-Digest: AJNSmZyywas9gY5GJk7ttbREgEl8NIiljS72qPKImzw=
+
+Name: res/drawable/weatherback.png
+SHA-256-Digest: N8hDK9+qw8UjtX0c8DRsHCk0FH/7AACNGm7Enajk0uY=
+
+Name: res/drawable/bg_day_weather_littlesnow_log.png
+SHA-256-Digest: y7PTA6cDKIq2XmWg+WukHYa7T4uXJ1YPxIrVump68BM=
+
+Name: res/drawable/bg_day_weather_rain_log.png
+SHA-256-Digest: 6Xh5AlpEjESFbkaAdgmXVImV4x7O1+hwIsKhjpwZitU=
+
+Name: res/drawable/today_bg.png
+SHA-256-Digest: pggc3xI95yawV6Go361tK4Jx7bVOaTICiRXvmbfmk2Y=
+
+Name: classes.dex
+SHA-256-Digest: Q7lOWcjvugLgvwWYqQD0+gS/3l7iZ1vo9g4II7Qx8UU=
+
+Name: res/drawable/weather_city_style.xml
+SHA-256-Digest: FMqYpmtRRYJuJDdx9yWVy7Jo5s+VmOI5maqKKku2ic8=
+

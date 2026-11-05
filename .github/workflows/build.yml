@@ -3,12 +3,8 @@ name: build
 on:
   workflow_dispatch:
     inputs:
-      version:
-        description: "补丁包版本号（留空则用 UTC 日期）"
-        required: false
-        default: ""
       publish:
-        description: "发布到 Release（tag 用 v<version>）"
+        description: "构建后发布到 Release（tag 用 v<run_number>）"
         type: boolean
         default: false
   push:
@@ -18,8 +14,8 @@ permissions:
   contents: write
 
 jobs:
-  patchpack:
-    name: build patchpack
+  apk:
+    name: build apk
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,49 +26,31 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Resolve Android SDK
+      - name: Show toolchain
         run: |
           set -euo pipefail
           SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
-          ANDROID_JAR="$(ls -d "$SDK"/platforms/android-*/android.jar | sort -V | tail -1)"
-          D8="$(ls -d "$SDK"/build-tools/*/d8 | sort -V | tail -1)"
-          test -f "$ANDROID_JAR"
-          test -x "$D8"
-          echo "ANDROID_JAR=$ANDROID_JAR" >>"$GITHUB_ENV"
-          echo "D8=$D8" >>"$GITHUB_ENV"
-          echo "android.jar : $ANDROID_JAR"
-          echo "d8          : $D8"
+          echo "SDK=$SDK"
+          ls -d "$SDK"/build-tools/*/ | sort -V | tail -3
+          echo "ANDROID_HOME=$SDK" >>"$GITHUB_ENV"
+          java -version
 
-      - name: Fetch support library
-        run: |
-          set -euo pipefail
-          curl -fsSL -o /tmp/support-core-ui.aar \
-            https://dl.google.com/dl/android/maven2/com/android/support/support-core-ui/25.3.1/support-core-ui-25.3.1.aar
-          mkdir -p deps
-          unzip -p /tmp/support-core-ui.aar classes.jar > deps/support-core-ui-25.3.1.jar
-          unzip -l deps/support-core-ui-25.3.1.jar | grep -q 'android/support/v4/view/ViewPager.class'
-          echo "SUPPORT_JAR=$PWD/deps/support-core-ui-25.3.1.jar" >>"$GITHUB_ENV"
+      - name: Cache apktool
+        uses: actions/cache@v4
+        with:
+          path: tools/apktool.jar
+          key: apktool-2.11.1
 
-      - name: Fetch smali tools
+      - name: Build
         run: |
-          set -euo pipefail
-          mvn -q -B -f tools/pom.xml dependency:copy-dependencies -DoutputDirectory="$PWD/deps"
-          echo "SMALI_CP=$(find "$PWD/deps" -name '*.jar' | tr '\n' ':')" >>"$GITHUB_ENV"
-
-      - name: Build patchpack
-        run: |
-          set -euo pipefail
-          VERSION="${{ inputs.version }}"
-          if [ -z "$VERSION" ]; then VERSION="$(date -u +%Y%m%d)"; fi
-          VERSION="$VERSION" tools/build-patchpack.sh
-          cp "dist/da-revive-patchpack-$VERSION.zip" dist/da-revive-patchpack.zip
-          echo "VERSION=$VERSION" >>"$GITHUB_ENV"
+          chmod +x tools/build.sh
+          tools/build.sh
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: da-revive-patchpack-${{ env.VERSION }}
-          path: dist/*.zip
+          name: NissanDA_revive-${{ github.run_number }}
+          path: dist/NissanDA_revive.apk
           if-no-files-found: error
 
       - name: Publish release
@@ -84,20 +62,23 @@ jobs:
           if [[ "$GITHUB_REF" == refs/tags/* ]]; then
             TAG="${GITHUB_REF#refs/tags/}"
           else
-            TAG="v${VERSION}"
-            git tag -f "$TAG" >/dev/null 2>&1 || true
+            TAG="v${GITHUB_RUN_NUMBER}"
           fi
-          NOTES="自动构建产物，仅包含补丁 smali 包，不含原版 APK。
+          SHA="$(sha256sum dist/NissanDA_revive.apk | cut -d' ' -f1)"
+          NOTES="自动构建产物。
 
           | 项 | 值 |
           |---|---|
-          | 版本 | \`$VERSION\` |
+          | 版本 | \`$TAG\` |
           | 提交 | \`$GITHUB_SHA\` |
-          | 内容 | \`com/autonavi/cvc/app/da/quick/*\`、\`com/autonavi/cvc/app/da/weather/WeatherFix*\` |
+          | SHA-256 | \`$SHA\` |
+          | 签名 | v1 + v2 + v3（\`nissan16\`，与历史版本一致，可覆盖安装） |
 
-          使用方法见仓库 README。"
+          安装前请先卸载官方原版（签名不同）。详见 README 与 DISCLAIMER。"
+
           if gh release view "$TAG" >/dev/null 2>&1; then
-            gh release upload "$TAG" dist/*.zip --clobber
+            gh release upload "$TAG" dist/NissanDA_revive.apk --clobber
           else
-            gh release create "$TAG" dist/*.zip --title "patchpack $TAG" --notes "$NOTES"
+            gh release create "$TAG" dist/NissanDA_revive.apk \
+              --title "$TAG" --notes "$NOTES"
           fi

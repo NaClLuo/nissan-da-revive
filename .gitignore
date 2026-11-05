@@ -1,6 +1,4 @@
 dist/
-*.apk
-*.idsig
+apktool_src/build/
 tools/apktool.jar
-tools/*.keystore
-deps/
+*.idsig

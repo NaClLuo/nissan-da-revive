@@ -2,17 +2,17 @@
 
 # nissan-da-revive
 
-让 2016 款日产轩逸 DA 车机的那款旧配套 App，在今天的手机上重新能用。
+2016 款日产轩逸 DA 车机配套的旧版 `Mobile App`，在今天的手机上重新能用。
 
-原包是 `com.autonavi.cvc.app.da`（Mobile App 1.5.0001，targetSdk 25）。它的机型适配表停在 Android 6，投屏入口在 Android 7 以上直接返回失败；天气接口 `wdapi.navinfo.com:8200` 也已经下线。这个仓库做的是把它重新接上：
+原包 `com.autonavi.cvc.app.da`（1.5.0001，targetSdk 25）的机型适配表停在 Android 6，投屏入口在 Android 7 以上直接返回失败；天气接口 `wdapi.navinfo.com:8200` 也已下线。这个仓库是**完整的 apktool 工程**——已打补丁，`apktool b` 一把就能出包：
 
 - 解开机型/系统版本限制，恢复调用系统投屏页；
 - 去掉「只允许 12 个白名单应用投屏」的前台检测；
-- 换掉已下线的天气源，顺手修掉天气详情页的崩溃；
+- 换掉已下线的天气源，修掉天气详情页的崩溃；
 - 首页右上角加投屏快捷键，底部 6 个写死的应用换成 12 个自选槽位（两页可滑、带搜索）；
 - 横屏支持正反两个方向。
 
-> 本仓库只包含**补丁本身**（我写的 Java 类 + 对原包 smali 的改动），不包含原版 APK，也不分发重打包后的完整 APK。原 App 的版权归原厂所有，你需要自己拥有一份合法副本。
+> 仓库是私有的，仅供个人在自己车机上使用。原 App 版权归原厂，请勿公开分发构建产物。
 
 ---
 
@@ -32,6 +32,20 @@
 
 ---
 
+## 目录
+
+```
+apktool_src/   完整 apktool 工程（原始 2900+ smali + 全部改动）
+patch/java/    自己写的 3 个类的 Java 源码（apktool_src 里的 smali 由它编译而来）
+tools/         build.sh + 签名密钥
+report/        逆向分析报告
+docs/          架构图
+```
+
+工程里的 `DA-REVIVE PATCH` 注释标出了每一处手改，`git log` 里有逐项说明。
+
+---
+
 ## 改了什么
 
 | # | 位置 | 改动 | 为什么 |
@@ -45,37 +59,24 @@
 | 7 | 新增 `QuickDesk` / `AppPickerActivity` | 右上角投屏键 + 12 个自选槽位 | 原 6 个图标写死，投屏入口太深 |
 | 8 | `AndroidManifest.xml` | 7 个 Activity `landscape` → `sensorLandscape` | 反着横置时画面颠倒 |
 
-改动以 unified diff 的形式放在 [`patches/da-revive.patch`](patches/da-revive.patch)，新增类的源码在 [`patch/java`](patch/java)。两者加起来就是全部差异。
-
 ---
 
-## 怎么用
+## 构建
 
-### 方式一：直接装现成的
+### 本地
 
-自己按下面的流程构建一次即可。仓库不提供成品 APK，原因见顶部说明。
-
-### 方式二：本地一条命令构建
-
-需要 JDK 17+、Android SDK build-tools（要 `zipalign` / `apksigner`）、`patch`、`unzip`。
+需要 JDK 17+ 和 Android SDK build-tools（要 `zipalign` / `apksigner`）。
 
 ```bash
-# 1. 编译补丁类，产出 patchpack
-export ANDROID_JAR=$ANDROID_HOME/platforms/android-35/android.jar
-export SUPPORT_JAR=/path/to/support-core-ui-25.3.1.jar   # 见下
-export SMALI_CP=$(find deps -name '*.jar' | tr '\n' ':')
-export D8=$ANDROID_HOME/build-tools/35.0.0/d8
-tools/build-patchpack.sh
-
-# 2. 拿你自己的原版 APK 打补丁
-tools/apply.sh /path/to/da.apk out.apk
+tools/build.sh
+# -> dist/NissanDA_revive.apk
 ```
 
-`apply.sh` 会自动下载 apktool 2.11.1、反编译、套用 `patches/da-revive.patch`、铺入 patchpack、回编译、zipalign、用自动生成的 keystore 签名。产物默认在 `dist/NissanDA_revive.apk`。
+首次运行会自动下载 apktool 2.11.1 到 `tools/apktool.jar`。签名用 `tools/nissan16.keystore`（alias `nissan16`，密码 `nissan123`），与历史版本相同，可以直接覆盖安装旧补丁。
 
-### 方式三：GitHub Actions 云编译
+### GitHub Actions
 
-Actions 页 → `build` → `Run workflow`，可填版本号、可勾选发布到 Release。产物是 **patchpack**（补丁 smali 包），不是完整 APK——云端没有、也不该有原版 APK。
+Actions → `build` → `Run workflow`：构建全量 APK，产物在 Artifacts；勾选 `publish` 或推 `v*` tag 会同时发到 Release。
 
 ---
 
@@ -99,22 +100,10 @@ Actions 页 → `build` → `Run workflow`，可填版本号、可勾选发布�
 
 ---
 
-## 目录
-
-```
-patches/   unified diff（Manifest + 6 个 smali）
-patch/     新增类的 Java 源码
-tools/     build-patchpack.sh / apply.sh / pom.xml
-report/    逆向分析报告
-docs/      架构图
-```
-
----
-
 ## 免责声明
 
-见 [`DISCLAIMER.md`](DISCLAIMER.md)。简单说：仅供个人在自己的车机上使用，不含任何原厂代码或资源，风险自负。
+见 [`DISCLAIMER.md`](DISCLAIMER.md)。仅供个人在自己的车机上使用，风险自负。
 
 ## 许可
 
-本仓库自有的代码（`patch/java`、`tools`、`patches`）以 MIT 发布。MIT **不覆盖**原 App 及其任何衍生物。
+`patch/java`、`tools` 等自写代码以 MIT 发布，不覆盖原 App 及其衍生物。

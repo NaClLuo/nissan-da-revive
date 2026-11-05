@@ -1,0 +1,1987 @@
+<root>
+<province>
+<code>320000</code>
+<name>江苏省</name>
+<py>Jiang Su Sheng</py>
+<city>
+<code>320100</code>
+<name>南京市</name>
+<py>Nan Jing Shi</py>
+</city>
+<city>
+<code>320200</code>
+<name>无锡市</name>
+<py>Wu Xi Shi</py>
+</city>
+<city>
+<code>320400</code>
+<name>常州市</name>
+<py>Chang Zhou Shi</py>
+</city>
+<city>
+<code>320500</code>
+<name>苏州市</name>
+<py>Su Zhou Shi</py>
+</city>
+<city>
+<code>320600</code>
+<name>南通市</name>
+<py>Nan Tong Shi</py>
+</city>
+<city>
+<code>321000</code>
+<name>扬州市</name>
+<py>Yang Zhou Shi</py>
+</city>
+<city>
+<code>321100</code>
+<name>镇江市</name>
+<py>Zhen Jiang Shi</py>
+</city>
+<city>
+<code>321200</code>
+<name>泰州市</name>
+<py>Tai Zhou Shi</py>
+</city>
+<city>
+<code>320300</code>
+<name>徐州市</name>
+<py>Xu Zhou Shi</py>
+</city>
+<city>
+<code>320700</code>
+<name>连云港市</name>
+<py>Lian Yun Gang Shi</py>
+</city>
+<city>
+<code>320800</code>
+<name>淮安市</name>
+<py>Huai An Shi</py>
+</city>
+<city>
+<code>320900</code>
+<name>盐城市</name>
+<py>Yan Cheng Shi</py>
+</city>
+<city>
+<code>321300</code>
+<name>宿迁市</name>
+<py>Su Qian Shi</py>
+</city>
+    </province>
+<province>
+<code>340000</code>
+<name>安徽省</name>
+<py>An Hui Sheng</py>
+<city>
+    <code>340100</code>
+    <name>合肥市</name>
+    <py>He Fei Shi</py>
+</city>
+<city>
+    <code>340200</code>
+    <name>芜湖市</name>
+    <py>Wu Hu Shi</py>
+</city>
+<city>
+    <code>340300</code>
+    <name>蚌埠市</name>
+    <py>Beng Bu Shi</py>
+</city>
+<city>
+    <code>340400</code>
+    <name>淮南市</name>
+    <py>Huai Nan Shi</py>
+</city>
+<city>
+    <code>340500</code>
+    <name>马鞍山市</name>
+    <py>Ma An Shan Shi</py>
+</city>
+<city>
+    <code>340600</code>
+    <name>淮北市</name>
+    <py>Huai Bei Shi</py>
+</city>
+<city>
+    <code>340700</code>
+    <name>铜陵市</name>
+    <py>Tong Ling Shi</py>
+</city>
+<city>
+    <code>340800</code>
+    <name>安庆市</name>
+    <py>An Qing Shi</py>
+</city>
+<city>
+    <code>341000</code>
+    <name>黄山市</name>
+    <py>Huang Shan Shi</py>
+</city>
+<city>
+    <code>341100</code>
+    <name>滁州市</name>
+    <py>Chu Zhou Shi</py>
+</city>
+<city>
+    <code>341200</code>
+    <name>阜阳市</name>
+    <py>Fu Yang Shi</py>
+</city>
+<city>
+    <code>341300</code>
+    <name>宿州市</name>
+    <py>Su Zhou Shi</py>
+</city>
+<city>
+    <code>341500</code>
+    <name>六安市</name>
+    <py>Lu An Shi</py>
+</city>
+<city>
+    <code>341600</code>
+    <name>亳州市</name>
+    <py>Bo Zhou Shi</py>
+</city>
+<city>
+    <code>341700</code>
+    <name>池州市</name>
+    <py>Chi Zhou Shi</py>
+</city>
+<city>
+    <code>341800</code>
+    <name>宣城市</name>
+    <py>Xuan Cheng Shi</py>
+</city>
+</province>
+<province>
+<code>360000</code>
+<name>江西省</name>
+<py>Jiang Xi Sheng</py>
+<city>
+    <code>360200</code>
+    <name>景德镇市</name>
+    <py>Jing De Zhen Shi</py>
+</city>
+<city>
+    <code>360400</code>
+    <name>九江市</name>
+    <py>Jiu Jiang Shi</py>
+</city>
+<city>
+    <code>361100</code>
+    <name>上饶市</name>
+    <py>Shang Rao Shi</py>
+</city>
+<city>
+    <code>360600</code>
+    <name>鹰潭市</name>
+    <py>Ying Tan Shi</py>
+</city>
+<city>
+    <code>360700</code>
+    <name>赣州市</name>
+    <py>Gan Zhou Shi</py>
+</city>
+<city>
+    <code>361000</code>
+    <name>抚州市</name>
+    <py>Fu Zhou Shi</py>
+</city>
+<city>
+    <code>360300</code>
+    <name>萍乡市</name>
+    <py>Ping Xiang Shi</py>
+</city>
+<city>
+    <code>360800</code>
+    <name>吉安市</name>
+    <py>Ji An Shi</py>
+</city>
+<city>
+    <code>360900</code>
+    <name>宜春市</name>
+    <py>Yi Chun Shi</py>
+</city>
+<city>
+    <code>360100</code>
+    <name>南昌市</name>
+    <py>Nan Chang Shi</py>
+</city>
+<city>
+    <code>360500</code>
+    <name>新余市</name>
+    <py>Xin Yu Shi</py>
+</city>
+</province>
+<province>
+<code>410000</code>
+<name>河南省</name>
+<py>He Nan Sheng</py>
+<city>
+    <code>411500</code>
+    <name>信阳市</name>
+    <py>Xin Yang Shi</py>
+</city>
+<city>
+    <code>411600</code>
+    <name>周口市</name>
+    <py>Zhou Kou Shi</py>
+</city>
+<city>
+    <code>410500</code>
+    <name>安阳市</name>
+    <py>An Yang Shi</py>
+</city>
+<city>
+    <code>410900</code>
+    <name>濮阳市</name>
+    <py>Pu Yang Shi</py>
+</city>
+<city>
+    <code>410100</code>
+    <name>郑州市</name>
+    <py>Zheng Zhou Shi</py>
+</city>
+<city>
+    <code>410200</code>
+    <name>开封市</name>
+    <py>Kai Feng Shi</py>
+</city>
+<city>
+    <code>410300</code>
+    <name>洛阳市</name>
+    <py>Luo Yang Shi</py>
+</city>
+<city>
+    <code>410400</code>
+    <name>平顶山市</name>
+    <py>Ping Ding Shan Shi</py>
+</city>
+<city>
+    <code>410600</code>
+    <name>鹤壁市</name>
+    <py>He Bi Shi</py>
+</city>
+<city>
+    <code>410700</code>
+    <name>新乡市</name>
+    <py>Xin Xiang Shi</py>
+</city>
+<city>
+    <code>410800</code>
+    <name>焦作市</name>
+    <py>Jiao Zuo Shi</py>
+</city>
+<city>
+    <code>411000</code>
+    <name>许昌市</name>
+    <py>Xu Chang Shi</py>
+</city>
+<city>
+    <code>411100</code>
+    <name>漯河市</name>
+    <py>Luo He Shi</py>
+</city>
+<city>
+    <code>411200</code>
+    <name>三门峡市</name>
+    <py>San Men Xia Shi</py>
+</city>
+<city>
+    <code>411300</code>
+    <name>南阳市</name>
+    <py>Nan Yang Shi</py>
+</city>
+<city>
+    <code>411400</code>
+    <name>商丘市</name>
+    <py>Shang Qiu Shi</py>
+</city>
+<city>
+    <code>411700</code>
+    <name>驻马店市</name>
+    <py>Zhu Ma Dian Shi</py>
+</city>
+<city>
+    <code>419098</code>
+    <name>济源市</name>
+    <py>Ji Yuan Shi</py>
+</city>
+</province>
+<province>
+<code>420000</code>
+<name>湖北省</name>
+<py>Hu Bei Sheng</py>
+<city>
+    <code>421100</code>
+    <name>黄冈市</name>
+    <py>Huang Gang Shi</py>
+</city>
+<city>
+    <code>420300</code>
+    <name>十堰市</name>
+    <py>Shi Yan Shi</py>
+</city>
+<city>
+    <code>422800</code>
+    <name>恩施土家族苗族自治州</name>
+    <py>En Shi Tu Jia Zu Miao Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>429078</code>
+    <name>神农架林区</name>
+    <py>Shen Nong Jia Lin Qu</py>
+</city>
+<city>
+    <code>420600</code>
+    <name>襄阳市</name>
+    <py>Xiang Yang Shi</py>
+</city>
+<city>
+    <code>420900</code>
+    <name>孝感市</name>
+    <py>Xiao Gan Shi</py>
+</city>
+<city>
+    <code>421300</code>
+    <name>随州市</name>
+    <py>Sui Zhou Shi</py>
+</city>
+<city>
+    <code>420100</code>
+    <name>武汉市</name>
+    <py>Wu Han Shi</py>
+</city>
+<city>
+    <code>420200</code>
+    <name>黄石市</name>
+    <py>Huang Shi Shi</py>
+</city>
+<city>
+    <code>420500</code>
+    <name>宜昌市</name>
+    <py>Yi Chang Shi</py>
+</city>
+<city>
+    <code>420700</code>
+    <name>鄂州市</name>
+    <py>E Zhou Shi</py>
+</city>
+<city>
+    <code>420800</code>
+    <name>荆门市</name>
+    <py>Jing Men Shi</py>
+</city>
+<city>
+    <code>421000</code>
+    <name>荆州市</name>
+    <py>Jing Zhou Shi</py>
+</city>
+<city>
+    <code>421200</code>
+    <name>咸宁市</name>
+    <py>Xian Ning Shi</py>
+</city>
+<city>
+    <code>429095</code>
+    <name>仙桃市</name>
+    <py>Xian Tao Shi</py>
+</city>
+<city>
+    <code>429094</code>
+    <name>潜江市</name>
+    <py>Qian Jiang Shi</py>
+</city>
+<city>
+    <code>429093</code>
+    <name>天门市</name>
+    <py>Tian Men Shi</py>
+</city>
+</province>
+<province>
+<code>820000</code>
+<name>澳門特別行政區</name>
+<py>Ao Men Te Bie Xing Zheng Qu</py>
+<city>
+    <code>820100</code>
+    <name>澳門</name>
+    <py>Ao Men</py>
+</city>
+</province>
+<province>
+<code>110000</code>
+<name>北京市</name>
+<py>Bei Jing Shi</py>
+<city>
+    <code>110099</code>
+    <name>北京市</name>
+    <py>Bei Jing Shi</py>
+</city>
+</province>
+<province>
+<code>120000</code>
+<name>天津市</name>
+<py>Tian Jin Shi</py>
+<city>
+    <code>120099</code>
+    <name>天津市</name>
+    <py>Tian Jin Shi</py>
+</city>
+</province>
+<province>
+<code>130000</code>
+<name>河北省</name>
+<py>He Bei Sheng</py>
+<city>
+    <code>130600</code>
+    <name>保定市</name>
+    <py>Bao Ding Shi</py>
+</city>
+<city>
+    <code>130700</code>
+    <name>张家口市</name>
+    <py>Zhang Jia Kou Shi</py>
+</city>
+<city>
+    <code>130800</code>
+    <name>承德市</name>
+    <py>Cheng De Shi</py>
+</city>
+<city>
+    <code>131000</code>
+    <name>廊坊市</name>
+    <py>Lang Fang Shi</py>
+</city>
+<city>
+    <code>130100</code>
+    <name>石家庄市</name>
+    <py>Shi Jia Zhuang Shi</py>
+</city>
+<city>
+    <code>130200</code>
+    <name>唐山市</name>
+    <py>Tang Shan Shi</py>
+</city>
+<city>
+    <code>130300</code>
+    <name>秦皇岛市</name>
+    <py>Qin Huang Dao Shi</py>
+</city>
+<city>
+    <code>130400</code>
+    <name>邯郸市</name>
+    <py>Han Dan Shi</py>
+</city>
+<city>
+    <code>130500</code>
+    <name>邢台市</name>
+    <py>Xing Tai Shi</py>
+</city>
+<city>
+    <code>130900</code>
+    <name>沧州市</name>
+    <py>Cang Zhou Shi</py>
+</city>
+<city>
+    <code>131100</code>
+    <name>衡水市</name>
+    <py>Heng Shui Shi</py>
+</city>
+</province>
+<province>
+<code>430000</code>
+<name>湖南省</name>
+<py>Hu Nan Sheng</py>
+<city>
+    <code>433100</code>
+    <name>湘西土家族苗族自治州</name>
+    <py>Xiang Xi Tu Jia Zu Miao Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>431000</code>
+    <name>郴州市</name>
+    <py>Chen Zhou Shi</py>
+</city>
+<city>
+    <code>431100</code>
+    <name>永州市</name>
+    <py>Yong Zhou Shi</py>
+</city>
+<city>
+    <code>430500</code>
+    <name>邵阳市</name>
+    <py>Shao Yang Shi</py>
+</city>
+<city>
+    <code>431200</code>
+    <name>怀化市</name>
+    <py>Huai Hua Shi</py>
+</city>
+<city>
+    <code>430600</code>
+    <name>岳阳市</name>
+    <py>Yue Yang Shi</py>
+</city>
+<city>
+    <code>430100</code>
+    <name>长沙市</name>
+    <py>Chang Sha Shi</py>
+</city>
+<city>
+    <code>430200</code>
+    <name>株洲市</name>
+    <py>Zhu Zhou Shi</py>
+</city>
+<city>
+    <code>430300</code>
+    <name>湘潭市</name>
+    <py>Xiang Tan Shi</py>
+</city>
+<city>
+    <code>430400</code>
+    <name>衡阳市</name>
+    <py>Heng Yang Shi</py>
+</city>
+<city>
+    <code>430700</code>
+    <name>常德市</name>
+    <py>Chang De Shi</py>
+</city>
+<city>
+    <code>430800</code>
+    <name>张家界市</name>
+    <py>Zhang Jia Jie Shi</py>
+</city>
+<city>
+    <code>430900</code>
+    <name>益阳市</name>
+    <py>Yi Yang Shi</py>
+</city>
+<city>
+    <code>431300</code>
+    <name>娄底市</name>
+    <py>Lou Di Shi</py>
+</city>
+</province>
+<province>
+<code>500000</code>
+<name>重庆市</name>
+<py>Chong Qing Shi</py>
+<city>
+    <code>500099</code>
+    <name>重庆市</name>
+    <py>Chong Qing Shi</py>
+</city>
+</province>
+<province>
+<code>510000</code>
+<name>四川省</name>
+<py>Si Chuan Sheng</py>
+<city>
+    <code>510500</code>
+    <name>泸州市</name>
+    <py>Lu Zhou Shi</py>
+</city>
+<city>
+    <code>510900</code>
+    <name>遂宁市</name>
+    <py>Sui Ning Shi</py>
+</city>
+<city>
+    <code>511000</code>
+    <name>内江市</name>
+    <py>Nei Jiang Shi</py>
+</city>
+<city>
+    <code>511300</code>
+    <name>南充市</name>
+    <py>Nan Chong Shi</py>
+</city>
+<city>
+    <code>511600</code>
+    <name>广安市</name>
+    <py>Guang An Shi</py>
+</city>
+<city>
+    <code>511700</code>
+    <name>达州市</name>
+    <py>Da Zhou Shi</py>
+</city>
+<city>
+    <code>512000</code>
+    <name>资阳市</name>
+    <py>Zi Yang Shi</py>
+</city>
+<city>
+    <code>513200</code>
+    <name>阿坝藏族羌族自治州</name>
+    <py>A Ba Zang Zu Qiang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>513300</code>
+    <name>甘孜藏族自治州</name>
+    <py>Gan Zi Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>510100</code>
+    <name>成都市</name>
+    <py>Cheng Du Shi</py>
+</city>
+<city>
+    <code>510600</code>
+    <name>德阳市</name>
+    <py>De Yang Shi</py>
+</city>
+<city>
+    <code>510700</code>
+    <name>绵阳市</name>
+    <py>Mian Yang Shi</py>
+</city>
+<city>
+    <code>511400</code>
+    <name>眉山市</name>
+    <py>Mei Shan Shi</py>
+</city>
+<city>
+    <code>511800</code>
+    <name>雅安市</name>
+    <py>Ya An Shi</py>
+</city>
+<city>
+    <code>510300</code>
+    <name>自贡市</name>
+    <py>Zi Gong Shi</py>
+</city>
+<city>
+    <code>510400</code>
+    <name>攀枝花市</name>
+    <py>Pan Zhi Hua Shi</py>
+</city>
+<city>
+    <code>510800</code>
+    <name>广元市</name>
+    <py>Guang Yuan Shi</py>
+</city>
+<city>
+    <code>511100</code>
+    <name>乐山市</name>
+    <py>Le Shan Shi</py>
+</city>
+<city>
+    <code>511500</code>
+    <name>宜宾市</name>
+    <py>Yi Bin Shi</py>
+</city>
+<city>
+    <code>511900</code>
+    <name>巴中市</name>
+    <py>Ba Zhong Shi</py>
+</city>
+<city>
+    <code>513400</code>
+    <name>凉山彝族自治州</name>
+    <py>Liang Shan Yi Zu Zi Zhi Zhou</py>
+</city>
+</province>
+<province>
+<code>520000</code>
+<name>贵州省</name>
+<py>Gui Zhou Sheng</py>
+<city>
+    <code>520300</code>
+    <name>遵义市</name>
+    <py>Zun Yi Shi</py>
+</city>
+<city>
+    <code>520600</code>
+    <name>铜仁市</name>
+    <py>Tong Ren Shi</py>
+</city>
+<city>
+    <code>522300</code>
+    <name>黔西南布依族苗族自治州</name>
+    <py>Qian Xi Nan Bu Yi Zu Miao Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>522600</code>
+    <name>黔东南苗族侗族自治州</name>
+    <py>Qian Dong Nan Miao Zu Dong Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>522700</code>
+    <name>黔南布依族苗族自治州</name>
+    <py>Qian Nan Bu Yi Zu Miao Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>520100</code>
+    <name>贵阳市</name>
+    <py>Gui Yang Shi</py>
+</city>
+<city>
+    <code>520200</code>
+    <name>六盘水市</name>
+    <py>Liu Pan Shui Shi</py>
+</city>
+<city>
+    <code>520400</code>
+    <name>安顺市</name>
+    <py>An Shun Shi</py>
+</city>
+<city>
+    <code>520500</code>
+    <name>毕节市</name>
+    <py>Bi Jie Shi</py>
+</city>
+</province>
+<province>
+<code>610000</code>
+<name>陕西省</name>
+<py>Shan Xi Sheng</py>
+<city>
+    <code>610900</code>
+    <name>安康市</name>
+    <py>An Kang Shi</py>
+</city>
+<city>
+    <code>610500</code>
+    <name>渭南市</name>
+    <py>Wei Nan Shi</py>
+</city>
+<city>
+    <code>611000</code>
+    <name>商洛市</name>
+    <py>Shang Luo Shi</py>
+</city>
+<city>
+    <code>610800</code>
+    <name>榆林市</name>
+    <py>Yu Lin Shi</py>
+</city>
+<city>
+    <code>610100</code>
+    <name>西安市</name>
+    <py>Xi An Shi</py>
+</city>
+<city>
+    <code>610200</code>
+    <name>铜川市</name>
+    <py>Tong Chuan Shi</py>
+</city>
+<city>
+    <code>610300</code>
+    <name>宝鸡市</name>
+    <py>Bao Ji Shi</py>
+</city>
+<city>
+    <code>610400</code>
+    <name>咸阳市</name>
+    <py>Xian Yang Shi</py>
+</city>
+<city>
+    <code>610600</code>
+    <name>延安市</name>
+    <py>Yan An Shi</py>
+</city>
+<city>
+    <code>610700</code>
+    <name>汉中市</name>
+    <py>Han Zhong Shi</py>
+</city>
+</province>
+<province>
+<code>350000</code>
+<name>福建省</name>
+<py>Fu Jian Sheng</py>
+<city>
+    <code>350100</code>
+    <name>福州市</name>
+    <py>Fu Zhou Shi</py>
+</city>
+<city>
+    <code>350200</code>
+    <name>厦门市</name>
+    <py>Xia Men Shi</py>
+</city>
+<city>
+    <code>350300</code>
+    <name>莆田市</name>
+    <py>Pu Tian Shi</py>
+</city>
+<city>
+    <code>350400</code>
+    <name>三明市</name>
+    <py>San Ming Shi</py>
+</city>
+<city>
+    <code>350500</code>
+    <name>泉州市</name>
+    <py>Quan Zhou Shi</py>
+</city>
+<city>
+    <code>350600</code>
+    <name>漳州市</name>
+    <py>Zhang Zhou Shi</py>
+</city>
+<city>
+    <code>350700</code>
+    <name>南平市</name>
+    <py>Nan Ping Shi</py>
+</city>
+<city>
+    <code>350800</code>
+    <name>龙岩市</name>
+    <py>Long Yan Shi</py>
+</city>
+<city>
+    <code>350900</code>
+    <name>宁德市</name>
+    <py>Ning De Shi</py>
+</city>
+</province>
+<province>
+<code>150000</code>
+<name>内蒙古自治区</name>
+<py>Nei Meng Gu Zi Zhi Qu</py>
+<city>
+    <code>152900</code>
+    <name>阿拉善盟</name>
+    <py>A La Shan Meng</py>
+</city>
+<city>
+    <code>150400</code>
+    <name>赤峰市</name>
+    <py>Chi Feng Shi</py>
+</city>
+<city>
+    <code>150900</code>
+    <name>乌兰察布市</name>
+    <py>Wu Lan Cha Bu Shi</py>
+</city>
+<city>
+    <code>152500</code>
+    <name>锡林郭勒盟</name>
+    <py>Xi Lin Guo Le Meng</py>
+</city>
+<city>
+    <code>150700</code>
+    <name>呼伦贝尔市</name>
+    <py>Hu Lun Bei Er Shi</py>
+</city>
+<city>
+    <code>152200</code>
+    <name>兴安盟</name>
+    <py>Xing An Meng</py>
+</city>
+<city>
+    <code>150500</code>
+    <name>通辽市</name>
+    <py>Tong Liao Shi</py>
+</city>
+<city>
+    <code>150100</code>
+    <name>呼和浩特市</name>
+    <py>Hu He Hao Te Shi</py>
+</city>
+<city>
+    <code>150200</code>
+    <name>包头市</name>
+    <py>Bao Tou Shi</py>
+</city>
+<city>
+    <code>150300</code>
+    <name>乌海市</name>
+    <py>Wu Hai Shi</py>
+</city>
+<city>
+    <code>150600</code>
+    <name>鄂尔多斯市</name>
+    <py>E Er Duo Si Shi</py>
+</city>
+<city>
+    <code>150800</code>
+    <name>巴彦淖尔市</name>
+    <py>Ba Yan Nao Er Shi</py>
+</city>
+</province>
+<province>
+<code>620000</code>
+<name>甘肃省</name>
+<py>Gan Su Sheng</py>
+<city>
+    <code>620100</code>
+    <name>兰州市</name>
+    <py>Lan Zhou Shi</py>
+</city>
+<city>
+    <code>620200</code>
+    <name>嘉峪关市</name>
+    <py>Jia Yu Guan Shi</py>
+</city>
+<city>
+    <code>620300</code>
+    <name>金昌市</name>
+    <py>Jin Chang Shi</py>
+</city>
+<city>
+    <code>620400</code>
+    <name>白银市</name>
+    <py>Bai Yin Shi</py>
+</city>
+<city>
+    <code>620500</code>
+    <name>天水市</name>
+    <py>Tian Shui Shi</py>
+</city>
+<city>
+    <code>620600</code>
+    <name>武威市</name>
+    <py>Wu Wei Shi</py>
+</city>
+<city>
+    <code>620700</code>
+    <name>张掖市</name>
+    <py>Zhang Ye Shi</py>
+</city>
+<city>
+    <code>620800</code>
+    <name>平凉市</name>
+    <py>Ping Liang Shi</py>
+</city>
+<city>
+    <code>620900</code>
+    <name>酒泉市</name>
+    <py>Jiu Quan Shi</py>
+</city>
+<city>
+    <code>621000</code>
+    <name>庆阳市</name>
+    <py>Qing Yang Shi</py>
+</city>
+<city>
+    <code>621100</code>
+    <name>定西市</name>
+    <py>Ding Xi Shi</py>
+</city>
+<city>
+    <code>621200</code>
+    <name>陇南市</name>
+    <py>Long Nan Shi</py>
+</city>
+<city>
+    <code>622900</code>
+    <name>临夏回族自治州</name>
+    <py>Lin Xia Hui Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>623000</code>
+    <name>甘南藏族自治州</name>
+    <py>Gan Nan Zang Zu Zi Zhi Zhou</py>
+</city>
+</province>
+<province>
+<code>630000</code>
+<name>青海省</name>
+<py>Qing Hai Sheng</py>
+<city>
+    <code>630200</code>
+    <name>海东市</name>
+    <py>Hai Dong Shi</py>
+</city>
+<city>
+    <code>632200</code>
+    <name>海北藏族自治州</name>
+    <py>Hai Bei Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>632300</code>
+    <name>黄南藏族自治州</name>
+    <py>Huang Nan Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>632600</code>
+    <name>果洛藏族自治州</name>
+    <py>Guo Luo Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>632800</code>
+    <name>海西蒙古族藏族自治州</name>
+    <py>Hai Xi Meng Gu Zu Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>630100</code>
+    <name>西宁市</name>
+    <py>Xi Ning Shi</py>
+</city>
+<city>
+    <code>632500</code>
+    <name>海南藏族自治州</name>
+    <py>Hai Nan Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>632700</code>
+    <name>玉树藏族自治州</name>
+    <py>Yu Shu Zang Zu Zi Zhi Zhou</py>
+</city>
+</province>
+<province>
+<code>640000</code>
+<name>宁夏回族自治区</name>
+<py>Ning Xia Hui Zu Zi Zhi Qu</py>
+<city>
+    <code>640300</code>
+    <name>吴忠市</name>
+    <py>Wu Zhong Shi</py>
+</city>
+<city>
+    <code>640400</code>
+    <name>固原市</name>
+    <py>Gu Yuan Shi</py>
+</city>
+<city>
+    <code>640500</code>
+    <name>中卫市</name>
+    <py>Zhong Wei Shi</py>
+</city>
+<city>
+    <code>640100</code>
+    <name>银川市</name>
+    <py>Yin Chuan Shi</py>
+</city>
+<city>
+    <code>640200</code>
+    <name>石嘴山市</name>
+    <py>Shi Zui Shan Shi</py>
+</city>
+</province>
+<province>
+<code>650000</code>
+<name>新疆维吾尔自治区</name>
+<py>Xin Jiang Wei Wu Er Zi Zhi Qu</py>
+<city>
+    <code>652200</code>
+    <name>哈密地区</name>
+    <py>Ha Mi Di Qu</py>
+</city>
+<city>
+    <code>652800</code>
+    <name>巴音郭楞蒙古自治州</name>
+    <py>Ba Yin Guo Leng Meng Gu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>650100</code>
+    <name>乌鲁木齐市</name>
+    <py>Wu Lu Mu Qi Shi</py>
+</city>
+<city>
+    <code>650200</code>
+    <name>克拉玛依市</name>
+    <py>Ke La Ma Yi Shi</py>
+</city>
+<city>
+    <code>652100</code>
+    <name>吐鲁番地区</name>
+    <py>Tu Lu Fan Di Qu</py>
+</city>
+<city>
+    <code>652300</code>
+    <name>昌吉回族自治州</name>
+    <py>Chang Ji Hui Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>652700</code>
+    <name>博尔塔拉蒙古自治州</name>
+    <py>Bo Er Ta La Meng Gu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>652900</code>
+    <name>阿克苏地区</name>
+    <py>A Ke Su Di Qu</py>
+</city>
+<city>
+    <code>653000</code>
+    <name>克孜勒苏柯尔克孜自治州</name>
+    <py>Ke Zi Le Su Ke Er Ke Zi Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>653100</code>
+    <name>喀什地区</name>
+    <py>Ka Shi Di Qu</py>
+</city>
+<city>
+    <code>653200</code>
+    <name>和田地区</name>
+    <py>He Tian Di Qu</py>
+</city>
+<city>
+    <code>654000</code>
+    <name>伊犁哈萨克自治州</name>
+    <py>Yi Li Ha Sa Ke Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>654200</code>
+    <name>塔城地区</name>
+    <py>Ta Cheng Di Qu</py>
+</city>
+<city>
+    <code>654300</code>
+    <name>阿勒泰地区</name>
+    <py>A Le Tai Di Qu</py>
+</city>
+<city>
+    <code>659098</code>
+    <name>石河子市</name>
+    <py>Shi He Zi Shi</py>
+</city>
+<city>
+    <code>659097</code>
+    <name>阿拉尔市</name>
+    <py>A La Er Shi</py>
+</city>
+<city>
+    <code>659096</code>
+    <name>图木舒克市</name>
+    <py>Tu Mu Shu Ke Shi</py>
+</city>
+<city>
+    <code>659095</code>
+    <name>五家渠市</name>
+    <py>Wu Jia Qu Shi</py>
+</city>
+</province>
+<province>
+<code>440000</code>
+<name>广东省</name>
+<py>Guang Dong Sheng</py>
+<city>
+    <code>440200</code>
+    <name>韶关市</name>
+    <py>Shao Guan Shi</py>
+</city>
+<city>
+    <code>440300</code>
+    <name>深圳市</name>
+    <py>Shen Zhen Shi</py>
+</city>
+<city>
+    <code>440400</code>
+    <name>珠海市</name>
+    <py>Zhu Hai Shi</py>
+</city>
+<city>
+    <code>440500</code>
+    <name>汕头市</name>
+    <py>Shan Tou Shi</py>
+</city>
+<city>
+    <code>441300</code>
+    <name>惠州市</name>
+    <py>Hui Zhou Shi</py>
+</city>
+<city>
+    <code>441400</code>
+    <name>梅州市</name>
+    <py>Mei Zhou Shi</py>
+</city>
+<city>
+    <code>441500</code>
+    <name>汕尾市</name>
+    <py>Shan Wei Shi</py>
+</city>
+<city>
+    <code>441600</code>
+    <name>河源市</name>
+    <py>He Yuan Shi</py>
+</city>
+<city>
+    <code>441800</code>
+    <name>清远市</name>
+    <py>Qing Yuan Shi</py>
+</city>
+<city>
+    <code>441999</code>
+    <name>东莞市</name>
+    <py>Dong Guan Shi</py>
+</city>
+<city>
+    <code>445100</code>
+    <name>潮州市</name>
+    <py>Chao Zhou Shi</py>
+</city>
+<city>
+    <code>445200</code>
+    <name>揭阳市</name>
+    <py>Jie Yang Shi</py>
+</city>
+<city>
+    <code>440600</code>
+    <name>佛山市</name>
+    <py>Fo Shan Shi</py>
+</city>
+<city>
+    <code>440700</code>
+    <name>江门市</name>
+    <py>Jiang Men Shi</py>
+</city>
+<city>
+    <code>440800</code>
+    <name>湛江市</name>
+    <py>Zhan Jiang Shi</py>
+</city>
+<city>
+    <code>440900</code>
+    <name>茂名市</name>
+    <py>Mao Ming Shi</py>
+</city>
+<city>
+    <code>441200</code>
+    <name>肇庆市</name>
+    <py>Zhao Qing Shi</py>
+</city>
+<city>
+    <code>441700</code>
+    <name>阳江市</name>
+    <py>Yang Jiang Shi</py>
+</city>
+<city>
+    <code>442099</code>
+    <name>中山市</name>
+    <py>Zhong Shan Shi</py>
+</city>
+<city>
+    <code>445300</code>
+    <name>云浮市</name>
+    <py>Yun Fu Shi</py>
+</city>
+<city>
+    <code>440100</code>
+    <name>广州市</name>
+    <py>Guang Zhou Shi</py>
+</city>
+</province>
+<province>
+<code>450000</code>
+<name>广西壮族自治区</name>
+<py>Guang Xi Zhuang Zu Zi Zhi Qu</py>
+<city>
+    <code>450400</code>
+    <name>梧州市</name>
+    <py>Wu Zhou Shi</py>
+</city>
+<city>
+    <code>450500</code>
+    <name>北海市</name>
+    <py>Bei Hai Shi</py>
+</city>
+<city>
+    <code>450900</code>
+    <name>玉林市</name>
+    <py>Yu Lin Shi</py>
+</city>
+<city>
+    <code>451100</code>
+    <name>贺州市</name>
+    <py>He Zhou Shi</py>
+</city>
+<city>
+    <code>450100</code>
+    <name>南宁市</name>
+    <py>Nan Ning Shi</py>
+</city>
+<city>
+    <code>450200</code>
+    <name>柳州市</name>
+    <py>Liu Zhou Shi</py>
+</city>
+<city>
+    <code>450300</code>
+    <name>桂林市</name>
+    <py>Gui Lin Shi</py>
+</city>
+<city>
+    <code>450600</code>
+    <name>防城港市</name>
+    <py>Fang Cheng Gang Shi</py>
+</city>
+<city>
+    <code>450700</code>
+    <name>钦州市</name>
+    <py>Qin Zhou Shi</py>
+</city>
+<city>
+    <code>450800</code>
+    <name>贵港市</name>
+    <py>Gui Gang Shi</py>
+</city>
+<city>
+    <code>451000</code>
+    <name>百色市</name>
+    <py>Bai Se Shi</py>
+</city>
+<city>
+    <code>451200</code>
+    <name>河池市</name>
+    <py>He Chi Shi</py>
+</city>
+<city>
+    <code>451300</code>
+    <name>来宾市</name>
+    <py>Lai Bin Shi</py>
+</city>
+<city>
+    <code>451400</code>
+    <name>崇左市</name>
+    <py>Chong Zuo Shi</py>
+</city>
+</province>
+<province>
+<code>460000</code>
+<name>海南省</name>
+<py>Hai Nan Sheng</py>
+<city>
+    <code>460100</code>
+    <name>海口市</name>
+    <py>Hai Kou Shi</py>
+</city>
+<city>
+    <code>469094</code>
+    <name>文昌市</name>
+    <py>Wen Chang Shi</py>
+</city>
+<city>
+    <code>469076</code>
+    <name>澄迈县</name>
+    <py>Cheng Mai Xian</py>
+</city>
+<city>
+    <code>460200</code>
+    <name>三亚市</name>
+    <py>San Ya Shi</py>
+</city>
+<city>
+    <code>460399</code>
+    <name>三沙市</name>
+    <py>San Sha Shi</py>
+</city>
+<city>
+    <code>469098</code>
+    <name>五指山市</name>
+    <py>Wu Zhi Shan Shi</py>
+</city>
+<city>
+    <code>469097</code>
+    <name>琼海市</name>
+    <py>Qiong Hai Shi</py>
+</city>
+<city>
+    <code>469096</code>
+    <name>儋州市</name>
+    <py>Dan Zhou Shi</py>
+</city>
+<city>
+    <code>469093</code>
+    <name>万宁市</name>
+    <py>Wan Ning Shi</py>
+</city>
+<city>
+    <code>469092</code>
+    <name>东方市</name>
+    <py>Dong Fang Shi</py>
+</city>
+<city>
+    <code>469078</code>
+    <name>定安县</name>
+    <py>Ding An Xian</py>
+</city>
+<city>
+    <code>469077</code>
+    <name>屯昌县</name>
+    <py>Tun Chang Xian</py>
+</city>
+<city>
+    <code>469075</code>
+    <name>临高县</name>
+    <py>Lin Gao Xian</py>
+</city>
+<city>
+    <code>469074</code>
+    <name>白沙黎族自治县</name>
+    <py>Bai Sha Li Zu Zi Zhi Xian</py>
+</city>
+<city>
+    <code>469073</code>
+    <name>昌江黎族自治县</name>
+    <py>Chang Jiang Li Zu Zi Zhi Xian</py>
+</city>
+<city>
+    <code>469072</code>
+    <name>乐东黎族自治县</name>
+    <py>Le Dong Li Zu Zi Zhi Xian</py>
+</city>
+<city>
+    <code>469071</code>
+    <name>陵水黎族自治县</name>
+    <py>Ling Shui Li Zu Zi Zhi Xian</py>
+</city>
+<city>
+    <code>469070</code>
+    <name>保亭黎族苗族自治县</name>
+    <py>Bao Ting Li Zu Miao Zu Zi Zhi Xian</py>
+</city>
+<city>
+    <code>469069</code>
+    <name>琼中黎族苗族自治县</name>
+    <py>Qiong Zhong Li Zu Miao Zu Zi Zhi Xian</py>
+</city>
+</province>
+<province>
+<code>530000</code>
+<name>云南省</name>
+<py>Yun Nan Sheng</py>
+<city>
+    <code>530300</code>
+    <name>曲靖市</name>
+    <py>Qu Jing Shi</py>
+</city>
+<city>
+    <code>532600</code>
+    <name>文山壮族苗族自治州</name>
+    <py>Wen Shan Zhuang Zu Miao Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>530600</code>
+    <name>昭通市</name>
+    <py>Zhao Tong Shi</py>
+</city>
+<city>
+    <code>530100</code>
+    <name>昆明市</name>
+    <py>Kun Ming Shi</py>
+</city>
+<city>
+    <code>530700</code>
+    <name>丽江市</name>
+    <py>Li Jiang Shi</py>
+</city>
+<city>
+    <code>532300</code>
+    <name>楚雄彝族自治州</name>
+    <py>Chu Xiong Yi Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>533400</code>
+    <name>迪庆藏族自治州</name>
+    <py>Di Qing Zang Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>530400</code>
+    <name>玉溪市</name>
+    <py>Yu Xi Shi</py>
+</city>
+<city>
+    <code>530500</code>
+    <name>保山市</name>
+    <py>Bao Shan Shi</py>
+</city>
+<city>
+    <code>530800</code>
+    <name>普洱市</name>
+    <py>Pu Er Shi</py>
+</city>
+<city>
+    <code>530900</code>
+    <name>临沧市</name>
+    <py>Lin Cang Shi</py>
+</city>
+<city>
+    <code>532500</code>
+    <name>红河哈尼族彝族自治州</name>
+    <py>Hong He Ha Ni Zu Yi Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>532800</code>
+    <name>西双版纳傣族自治州</name>
+    <py>Xi Shuang Ban Na Dai Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>532900</code>
+    <name>大理白族自治州</name>
+    <py>Da Li Bai Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>533100</code>
+    <name>德宏傣族景颇族自治州</name>
+    <py>De Hong Dai Zu Jing Po Zu Zi Zhi Zhou</py>
+</city>
+<city>
+    <code>533300</code>
+    <name>怒江傈僳族自治州</name>
+    <py>Nu Jiang Li Su Zu Zi Zhi Zhou</py>
+</city>
+</province>
+<province>
+<code>140000</code>
+<name>山西省</name>
+<py>Shan Xi Sheng</py>
+<city>
+    <code>140200</code>
+    <name>大同市</name>
+    <py>Da Tong Shi</py>
+</city>
+<city>
+    <code>140300</code>
+    <name>阳泉市</name>
+    <py>Yang Quan Shi</py>
+</city>
+<city>
+    <code>140400</code>
+    <name>长治市</name>
+    <py>Chang Zhi Shi</py>
+</city>
+<city>
+    <code>140700</code>
+    <name>晋中市</name>
+    <py>Jin Zhong Shi</py>
+</city>
+<city>
+    <code>140900</code>
+    <name>忻州市</name>
+    <py>Xin Zhou Shi</py>
+</city>
+<city>
+    <code>140500</code>
+    <name>晋城市</name>
+    <py>Jin Cheng Shi</py>
+</city>
+<city>
+    <code>140800</code>
+    <name>运城市</name>
+    <py>Yun Cheng Shi</py>
+</city>
+<city>
+    <code>141000</code>
+    <name>临汾市</name>
+    <py>Lin Fen Shi</py>
+</city>
+<city>
+    <code>141100</code>
+    <name>吕梁市</name>
+    <py>Lv Liang Shi</py>
+</city>
+<city>
+    <code>140100</code>
+    <name>太原市</name>
+    <py>Tai Yuan Shi</py>
+</city>
+<city>
+    <code>140600</code>
+    <name>朔州市</name>
+    <py>Shuo Zhou Shi</py>
+</city>
+</province>
+<province>
+<code>210000</code>
+<name>辽宁省</name>
+<py>Liao Ning Sheng</py>
+<city>
+    <code>211300</code>
+    <name>朝阳市</name>
+    <py>Chao Yang Shi</py>
+</city>
+<city>
+    <code>211400</code>
+    <name>葫芦岛市</name>
+    <py>Hu Lu Dao Shi</py>
+</city>
+<city>
+    <code>210400</code>
+    <name>抚顺市</name>
+    <py>Fu Shun Shi</py>
+</city>
+<city>
+    <code>210500</code>
+    <name>本溪市</name>
+    <py>Ben Xi Shi</py>
+</city>
+<city>
+    <code>210600</code>
+    <name>丹东市</name>
+    <py>Dan Dong Shi</py>
+</city>
+<city>
+    <code>211200</code>
+    <name>铁岭市</name>
+    <py>Tie Ling Shi</py>
+</city>
+<city>
+    <code>210100</code>
+    <name>沈阳市</name>
+    <py>Shen Yang Shi</py>
+</city>
+<city>
+    <code>210200</code>
+    <name>大连市</name>
+    <py>Da Lian Shi</py>
+</city>
+<city>
+    <code>210300</code>
+    <name>鞍山市</name>
+    <py>An Shan Shi</py>
+</city>
+<city>
+    <code>210700</code>
+    <name>锦州市</name>
+    <py>Jin Zhou Shi</py>
+</city>
+<city>
+    <code>210800</code>
+    <name>营口市</name>
+    <py>Ying Kou Shi</py>
+</city>
+<city>
+    <code>210900</code>
+    <name>阜新市</name>
+    <py>Fu Xin Shi</py>
+</city>
+<city>
+    <code>211000</code>
+    <name>辽阳市</name>
+    <py>Liao Yang Shi</py>
+</city>
+<city>
+    <code>211100</code>
+    <name>盘锦市</name>
+    <py>Pan Jin Shi</py>
+</city>
+</province>
+<province>
+<code>370000</code>
+<name>山东省</name>
+<py>Shan Dong Sheng</py>
+<city>
+    <code>371400</code>
+    <name>德州市</name>
+    <py>De Zhou Shi</py>
+</city>
+<city>
+    <code>371500</code>
+    <name>聊城市</name>
+    <py>Liao Cheng Shi</py>
+</city>
+<city>
+    <code>371600</code>
+    <name>滨州市</name>
+    <py>Bin Zhou Shi</py>
+</city>
+<city>
+    <code>370400</code>
+    <name>枣庄市</name>
+    <py>Zao Zhuang Shi</py>
+</city>
+<city>
+    <code>370800</code>
+    <name>济宁市</name>
+    <py>Ji Ning Shi</py>
+</city>
+<city>
+    <code>371100</code>
+    <name>日照市</name>
+    <py>Ri Zhao Shi</py>
+</city>
+<city>
+    <code>371300</code>
+    <name>临沂市</name>
+    <py>Lin Yi Shi</py>
+</city>
+<city>
+    <code>371700</code>
+    <name>菏泽市</name>
+    <py>He Ze Shi</py>
+</city>
+<city>
+    <code>370600</code>
+    <name>烟台市</name>
+    <py>Yan Tai Shi</py>
+</city>
+<city>
+    <code>371000</code>
+    <name>威海市</name>
+    <py>Wei Hai Shi</py>
+</city>
+<city>
+    <code>370100</code>
+    <name>济南市</name>
+    <py>Ji Nan Shi</py>
+</city>
+<city>
+    <code>370300</code>
+    <name>淄博市</name>
+    <py>Zi Bo Shi</py>
+</city>
+<city>
+    <code>370500</code>
+    <name>东营市</name>
+    <py>Dong Ying Shi</py>
+</city>
+<city>
+    <code>370700</code>
+    <name>潍坊市</name>
+    <py>Wei Fang Shi</py>
+</city>
+<city>
+    <code>370900</code>
+    <name>泰安市</name>
+    <py>Tai An Shi</py>
+</city>
+<city>
+    <code>371200</code>
+    <name>莱芜市</name>
+    <py>Lai Wu Shi</py>
+</city>
+<city>
+    <code>370200</code>
+    <name>青岛市</name>
+    <py>Qing Dao Shi</py>
+</city>
+</province>
+<province>
+<code>230000</code>
+<name>黑龙江省</name>
+<py>Hei Long Jiang Sheng</py>
+<city>
+    <code>230100</code>
+    <name>哈尔滨市</name>
+    <py>Ha Er Bin Shi</py>
+</city>
+<city>
+    <code>230200</code>
+    <name>齐齐哈尔市</name>
+    <py>Qi Qi Ha Er Shi</py>
+</city>
+<city>
+    <code>230300</code>
+    <name>鸡西市</name>
+    <py>Ji Xi Shi</py>
+</city>
+<city>
+    <code>230400</code>
+    <name>鹤岗市</name>
+    <py>He Gang Shi</py>
+</city>
+<city>
+    <code>230500</code>
+    <name>双鸭山市</name>
+    <py>Shuang Ya Shan Shi</py>
+</city>
+<city>
+    <code>230600</code>
+    <name>大庆市</name>
+    <py>Da Qing Shi</py>
+</city>
+<city>
+    <code>230700</code>
+    <name>伊春市</name>
+    <py>Yi Chun Shi</py>
+</city>
+<city>
+    <code>230800</code>
+    <name>佳木斯市</name>
+    <py>Jia Mu Si Shi</py>
+</city>
+<city>
+    <code>230900</code>
+    <name>七台河市</name>
+    <py>Qi Tai He Shi</py>
+</city>
+<city>
+    <code>231000</code>
+    <name>牡丹江市</name>
+    <py>Mu Dan Jiang Shi</py>
+</city>
+<city>
+    <code>231100</code>
+    <name>黑河市</name>
+    <py>Hei He Shi</py>
+</city>
+<city>
+    <code>231200</code>
+    <name>绥化市</name>
+    <py>Sui Hua Shi</py>
+</city>
+<city>
+    <code>232700</code>
+    <name>大兴安岭地区</name>
+    <py>Da Xing An Ling Di Qu</py>
+</city>
+</province>
+<province>
+<code>310000</code>
+<name>上海市</name>
+<py>Shang Hai Shi</py>
+<city>
+    <code>310099</code>
+    <name>上海市</name>
+    <py>Shang Hai Shi</py>
+</city>
+</province>
+<province>
+<code>330000</code>
+<name>浙江省</name>
+<py>Zhe Jiang Sheng</py>
+<city>
+    <code>330400</code>
+    <name>嘉兴市</name>
+    <py>Jia Xing Shi</py>
+</city>
+<city>
+    <code>330500</code>
+    <name>湖州市</name>
+    <py>Hu Zhou Shi</py>
+</city>
+<city>
+    <code>330900</code>
+    <name>舟山市</name>
+    <py>Zhou Shan Shi</py>
+</city>
+<city>
+    <code>330100</code>
+    <name>杭州市</name>
+    <py>Hang Zhou Shi</py>
+</city>
+<city>
+    <code>330200</code>
+    <name>宁波市</name>
+    <py>Ning Bo Shi</py>
+</city>
+<city>
+    <code>330600</code>
+    <name>绍兴市</name>
+    <py>Shao Xing Shi</py>
+</city>
+<city>
+    <code>330300</code>
+    <name>温州市</name>
+    <py>Wen Zhou Shi</py>
+</city>
+<city>
+    <code>330700</code>
+    <name>金华市</name>
+    <py>Jin Hua Shi</py>
+</city>
+<city>
+    <code>330800</code>
+    <name>衢州市</name>
+    <py>Qu Zhou Shi</py>
+</city>
+<city>
+    <code>331000</code>
+    <name>台州市</name>
+    <py>Tai Zhou Shi</py>
+</city>
+<city>
+    <code>331100</code>
+    <name>丽水市</name>
+    <py>Li Shui Shi</py>
+</city>
+</province>
+<province>
+<code>220000</code>
+<name>吉林省</name>
+<py>Ji Lin Sheng</py>
+<city>
+    <code>220100</code>
+    <name>长春市</name>
+    <py>Chang Chun Shi</py>
+</city>
+<city>
+    <code>220200</code>
+    <name>吉林市</name>
+    <py>Ji Lin Shi</py>
+</city>
+<city>
+    <code>220300</code>
+    <name>四平市</name>
+    <py>Si Ping Shi</py>
+</city>
+<city>
+    <code>220400</code>
+    <name>辽源市</name>
+    <py>Liao Yuan Shi</py>
+</city>
+<city>
+    <code>220500</code>
+    <name>通化市</name>
+    <py>Tong Hua Shi</py>
+</city>
+<city>
+    <code>220600</code>
+    <name>白山市</name>
+    <py>Bai Shan Shi</py>
+</city>
+<city>
+    <code>220700</code>
+    <name>松原市</name>
+    <py>Song Yuan Shi</py>
+</city>
+<city>
+    <code>220800</code>
+    <name>白城市</name>
+    <py>Bai Cheng Shi</py>
+</city>
+<city>
+    <code>222400</code>
+    <name>延边朝鲜族自治州</name>
+    <py>Yan Bian Chao Xian Zu Zi Zhi Zhou</py>
+</city>
+</province>
+<province>
+<code>540000</code>
+<name>西藏自治区</name>
+<py>Xi Zang Zi Zhi Qu</py>
+<city>
+    <code>542100</code>
+    <name>昌都地区</name>
+    <py>Chang Du Di Qu</py>
+</city>
+<city>
+    <code>542400</code>
+    <name>那曲地区</name>
+    <py>Na Qu Di Qu</py>
+</city>
+<city>
+    <code>542500</code>
+    <name>阿里地区</name>
+    <py>A Li Di Qu</py>
+</city>
+<city>
+    <code>540100</code>
+    <name>拉萨市</name>
+    <py>La Sa Shi</py>
+</city>
+<city>
+    <code>542200</code>
+    <name>山南地区</name>
+    <py>Shan Nan Di Qu</py>
+</city>
+<city>
+    <code>542300</code>
+    <name>日喀则地区</name>
+    <py>Ri Ka Ze Di Qu</py>
+</city>
+<city>
+    <code>542600</code>
+    <name>林芝地区</name>
+    <py>Lin Zhi Di Qu</py>
+</city>
+</province>
+<province>
+<code>810000</code>
+<name>香港特別行政區</name>
+<py>Xiang Gang Te Bie Xing Zheng Qu</py>
+<city>
+    <code>810000</code>
+    <name>香港</name>
+    <py>Xiang Gang</py>
+</city>
+</province>
+</root>

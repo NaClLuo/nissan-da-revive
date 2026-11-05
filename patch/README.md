@@ -1,6 +1,6 @@
-# 补丁源码与复现
+# 补丁说明
 
-这个目录只放**新增的类**，不放完整 apktool 工程（原始树有 2900 多个 smali，没必要进仓库）。对原包的改动以 unified diff 形式放在 [`../patches/da-revive.patch`](../patches/da-revive.patch)。
+完整工程在 [`../apktool_src`](../apktool_src)，`apktool b` 直接出包。这个目录单独留下自己写的 3 个类的 Java 源码——工程里的 smali 是它们编译后的产物，改逻辑请改这里再重新生成，不要直接动 smali。
 
 ```
 java/
@@ -9,29 +9,19 @@ java/
   com/autonavi/cvc/app/da/weather/WeatherFix.java         天气数据源替换
 ```
 
-## 一、构建与注入
-
-两条脚本包掉了全部步骤，不需要手工敲 javac / d8 / baksmali：
-
-```bash
-# 编译 patch/java -> dist/da-revive-patchpack-<日期>.zip
-tools/build-patchpack.sh
-
-# 反编译原包 -> 套 diff -> 铺 patchpack -> 回编译 -> 签名
-tools/apply.sh /path/to/da.apk
-```
-
-`build-patchpack.sh` 做的事，拆开看就是：
+## 重新生成 smali
 
 ```bash
 javac -source 8 -target 8 -cp "$ANDROID_JAR:$SUPPORT_JAR" -d out $(find java -name '*.java')
 d8 --release --min-api 18 --lib "$ANDROID_JAR" --classpath "$SUPPORT_JAR" --output dex $(find out -name '*.class')
 java -cp "deps/*" com.android.tools.smali.baksmali.Main d dex/classes.dex -o smali_out
+cp -r smali_out/com/autonavi/cvc/app/da/quick ../apktool_src/smali/com/autonavi/cvc/app/da/
+cp smali_out/com/autonavi/cvc/app/da/weather/WeatherFix*.smali ../apktool_src/smali/com/autonavi/cvc/app/da/weather/
 ```
 
 `QuickDesk` 依赖 support-v4 的 `ViewPager` / `PagerAdapter`。原包自带 `android.support.v4` 25.3.1，所以只需要 `support-core-ui-25.3.1.aar` 里的 `classes.jar` 作编译期 classpath，运行时不用额外打包依赖。
 
-## 二、手改的 smali
+## 手改的 smali
 
 | 文件 | 位置 | 改动 |
 |---|---|---|
@@ -43,15 +33,16 @@ java -cp "deps/*" com.android.tools.smali.baksmali.Main d dex/classes.dex -o sma
 | `...weather/WeatherHelper.smali` | `getWeather(String, Listener, boolean)` | 方法体改为 `invoke-static {p0, p1, p2}, Lcom/autonavi/cvc/app/da/weather/WeatherFix;->getWeather(Ljava/lang/String;Ljava/lang/Object;Z)V` |
 | `...weather/model/Weather.smali` | `getWashCarInfo()` | 两处 `return null` 改为 `const-string v2, ""`；`desc` 赋值后补 `if-eqz` 判空 |
 
-## 三、Manifest
+以上每处都在文件里留了 `# DA-REVIVE PATCH:` 注释，grep 一下就能定位。
+
+## Manifest
 
 ```diff
 - android:screenOrientation="landscape"
 + android:screenOrientation="sensorLandscape"
 ```
-7 个 Activity 全部替换。
 
-新增：
+7 个 Activity 全部替换。新增：
 
 ```xml
 <activity
@@ -63,25 +54,26 @@ java -cp "deps/*" com.android.tools.smali.baksmali.Main d dex/classes.dex -o sma
     android:theme="@android:style/Theme.NoTitleBar" />
 ```
 
-## 四、重打包与签名
-
-`apply.sh` 里已经包含这一步，等价于：
+## 打包与签名
 
 ```bash
-apktool d -f da.apk -o tree
-patch -p1 -d tree < patches/da-revive.patch
-unzip -qo dist/da-revive-patchpack-*.zip -d tree/smali
-apktool b tree -o patched_unsigned.apk
+tools/build.sh
+```
+
+等价于：
+
+```bash
+apktool b apktool_src -o patched_unsigned.apk
 zipalign -p -f 4 patched_unsigned.apk patched_aligned.apk
-apksigner sign --ks da-revive.keystore --ks-key-alias darevive \
-  --ks-pass pass:darevive --key-pass pass:darevive \
+apksigner sign --ks tools/nissan16.keystore --ks-key-alias nissan16 \
+  --ks-pass pass:nissan123 --key-pass pass:nissan123 \
   --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true \
   --out NissanDA_revive.apk patched_aligned.apk
 ```
 
-注意 `patch` 的上下文包含 `.line` 指令，所以反编译**不能**加 `--no-debug-info`，否则 hunk 全部对不上。apktool 版本也要锁 2.11.1，不同版本生成的 smali 排版会有差异。
+apktool 版本锁 2.11.1：不同版本对同一份 smali 的重新汇编结果可能有差异，出问题先核对版本。
 
-## 五、天气接口的映射规则
+## 天气接口的映射规则
 
 open-meteo 的 WMO code 到原 App 的中国天气码：
 

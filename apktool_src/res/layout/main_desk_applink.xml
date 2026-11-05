@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/app_link_01" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_01">
+        <ImageView android:id="@id/app_link_icon_01" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_01" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/app_link_02" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_02">
+        <ImageView android:id="@id/app_link_icon_02" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_02" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/app_link_03" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_03">
+        <ImageView android:id="@id/app_link_icon_03" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_03" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_03" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/app_link_04" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_04">
+        <ImageView android:id="@id/app_link_icon_04" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_04" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/app_link_05" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_05">
+        <ImageView android:id="@id/app_link_icon_05" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_05" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/app_link_06" android:visibility="invisible" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:onClick="app_link_06">
+        <ImageView android:id="@id/app_link_icon_06" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginTop="8.0dip" android:layout_centerHorizontal="true" />
+        <TextView android:id="@id/app_link_name_06" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="" android:layout_below="@id/app_link_icon_06" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>
