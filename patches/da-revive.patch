@@ -1,0 +1,610 @@
+--- a/AndroidManifest.xml	2026-11-05 08:47:53.267318718 +0800
++++ b/AndroidManifest.xml	2026-11-05 08:48:13.147388766 +0800
+@@ -32,8 +32,8 @@
+     <uses-permission android:name="android.permission.GET_TASKS"/>
+     <meta-data android:name="android.support.VERSION" android:value="25.3.1"/>
+     <application android:allowBackup="true" android:icon="@drawable/icon" android:label="@string/app_name" android:name="com.autonavi.cvc.app.da.App" android:supportsRtl="true" android:theme="@style/AppTheme">
+-        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.GuideAnim" android:screenOrientation="landscape"/>
+-        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.autonavi.cvc.app.da.ui.activity.MainActivity" android:screenOrientation="landscape">
++        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.GuideAnim" android:screenOrientation="sensorLandscape"/>
++        <activity android:configChanges="keyboardHidden|orientation" android:label="@string/app_name" android:launchMode="singleTask" android:name="com.autonavi.cvc.app.da.ui.activity.MainActivity" android:screenOrientation="sensorLandscape">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+                 <category android:name="android.intent.category.HOME"/>
+@@ -41,10 +41,11 @@
+                 <category android:name="android.intent.category.LAUNCHER"/>
+             </intent-filter>
+         </activity>
+-        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.weather.WeatherActivity" android:screenOrientation="landscape"/>
+-        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.WebViewActivity" android:screenOrientation="landscape"/>
+-        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.weather.CityListActivity" android:screenOrientation="landscape"/>
+-        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.WebViewErrorActivity" android:screenOrientation="landscape"/>
++        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.weather.WeatherActivity" android:screenOrientation="sensorLandscape"/>
++        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.WebViewActivity" android:screenOrientation="sensorLandscape"/>
++        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.weather.CityListActivity" android:screenOrientation="sensorLandscape"/>
++        <activity android:configChanges="keyboardHidden|orientation" android:name="com.autonavi.cvc.app.da.ui.activity.WebViewErrorActivity" android:screenOrientation="sensorLandscape"/>
++        <activity android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize" android:label="选择桌面应用" android:name="com.autonavi.cvc.app.da.quick.AppPickerActivity" android:screenOrientation="sensorLandscape" android:windowSoftInputMode="adjustResize" android:theme="@android:style/Theme.NoTitleBar"/>
+         <activity android:enabled="false" android:exported="false" android:label="MockHome" android:name="com.autonavi.cvc.app.da.MockHome">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN"/>
+--- a/smali/com/autonavi/cvc/app/da/ui/activity/MainActivity.smali	2026-11-05 08:47:53.275318747 +0800
++++ b/smali/com/autonavi/cvc/app/da/ui/activity/MainActivity.smali	2026-11-05 08:48:13.150388777 +0800
+@@ -157,7 +157,8 @@
+     iput-boolean v4, p0, Lcom/autonavi/cvc/app/da/ui/activity/MainActivity;->isLogin:Z
+ 
+     .line 421
+-    const/4 v0, 0x5
++    # DA-REVIVE PATCH: drop legacy storage permissions from the fatal runtime request.
++    const/4 v0, 0x3
+ 
+     new-array v0, v0, [Ljava/lang/String;
+ 
+@@ -173,14 +174,6 @@
+ 
+     aput-object v1, v0, v6
+ 
+-    const-string v1, "android.permission.READ_EXTERNAL_STORAGE"
+-
+-    aput-object v1, v0, v7
+-
+-    const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
+-
+-    aput-object v1, v0, v8
+-
+     iput-object v0, p0, Lcom/autonavi/cvc/app/da/ui/activity/MainActivity;->permissions:[Ljava/lang/String;
+ 
+     .line 612
+@@ -3283,6 +3276,8 @@
+     .end local v10    # "imageView":Landroid/widget/ImageView;
+     .end local v15    # "layoutIndexParams":Landroid/widget/RelativeLayout$LayoutParams;
+     :cond_5
++    # DA-REVIVE PATCH: replace the hard-coded 6 shortcuts with the user's own set.
++    invoke-static/range {p0 .. p0}, Lcom/autonavi/cvc/app/da/quick/QuickDesk;->overlay(Landroid/app/Activity;)V
+     return-void
+ 
+     .line 734
+@@ -5646,6 +5641,9 @@
+     .line 994
+     invoke-super {p0}, Lcom/autonavi/cvc/app/da/ui/base/ActivityBase;->onResume()V
+ 
++    # DA-REVIVE PATCH: rebuild the shortcut bar after returning from the picker.
++    invoke-static {p0}, Lcom/autonavi/cvc/app/da/quick/QuickDesk;->overlay(Landroid/app/Activity;)V
++
+     .line 996
+     invoke-static {p0}, Lcom/umeng/analytics/MobclickAgent;->onResume(Landroid/content/Context;)V
+ 
+--- a/smali/com/autonavi/cvc/app/da/weather/model/Weather.smali	2026-11-05 08:47:53.284318778 +0800
++++ b/smali/com/autonavi/cvc/app/da/weather/model/Weather.smali	2026-11-05 08:48:13.152388784 +0800
+@@ -549,7 +549,9 @@
+     .locals 6
+ 
+     .prologue
+-    const/4 v2, 0x0
++    # DA-REVIVE PATCH: open-meteo has no car-wash index. Return "" so
++    # CommonConstant.carwashIndex resolves to 1 star instead of NPE on null.
++    const-string v2, ""
+ 
+     .line 218
+     iget-object v3, p0, Lcom/autonavi/cvc/app/da/weather/model/Weather;->index:Lcom/autonavi/cvc/app/da/weather/model/Weather$Index;
+@@ -600,6 +602,11 @@
+     .line 230
+     iget-object v2, v0, Lcom/autonavi/cvc/app/da/weather/model/Weather$Index$Indices;->desc:Ljava/lang/String;
+ 
++    # DA-REVIVE PATCH: a null desc would still crash the detail page.
++    if-eqz v2, :desc_ok
++    const-string v2, ""
++    :desc_ok
++
+     goto :goto_0
+ .end method
+ 
+--- a/smali/com/autonavi/cvc/app/da/weather/WeatherHelper.smali	2026-11-05 08:47:53.293318810 +0800
++++ b/smali/com/autonavi/cvc/app/da/weather/WeatherHelper.smali	2026-11-05 08:48:13.153388788 +0800
+@@ -46,48 +46,15 @@
+ .end method
+ 
+ .method public static getWeather(Ljava/lang/String;Lcom/autonavi/cvc/app/da/weather/WeatherHelper$Listener;Z)V
+-    .locals 5
++    .locals 2
+     .param p0, "cityCode"    # Ljava/lang/String;
+     .param p1, "l"    # Lcom/autonavi/cvc/app/da/weather/WeatherHelper$Listener;
+     .param p2, "save"    # Z
+ 
+-    .prologue
+-    .line 20
+-    move-object v0, p0
++    # DA-REVIVE PATCH: wdapi.navinfo.com:8200 is offline.
++    # WeatherFix resolves the city, calls open-meteo and rebuilds the legacy JSON.
++    invoke-static {p0, p1, p2}, Lcom/autonavi/cvc/app/da/weather/WeatherFix;->getWeather(Ljava/lang/String;Ljava/lang/Object;Z)V
+ 
+-    .line 21
+-    .local v0, "code":Ljava/lang/String;
+-    move-object v1, p1
+-
+-    .line 22
+-    .local v1, "listener":Lcom/autonavi/cvc/app/da/weather/WeatherHelper$Listener;
+-    new-instance v3, Ljava/lang/StringBuilder;
+-
+-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+-
+-    sget-object v4, Lcom/autonavi/cvc/app/da/weather/WeatherHelper;->searchByCode:Ljava/lang/String;
+-
+-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    move-result-object v3
+-
+-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    move-result-object v3
+-
+-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v2
+-
+-    .line 23
+-    .local v2, "url":Ljava/lang/String;
+-    new-instance v3, Lcom/autonavi/cvc/app/da/weather/WeatherHelper$1;
+-
+-    invoke-direct {v3, p2, v1}, Lcom/autonavi/cvc/app/da/weather/WeatherHelper$1;-><init>(ZLcom/autonavi/cvc/app/da/weather/WeatherHelper$Listener;)V
+-
+-    invoke-static {v2, v3}, Lcom/autonavi/cvc/app/da/http/HttpConnect;->get(Ljava/lang/String;Lcom/autonavi/cvc/app/da/http/HttpConnect$Listener;)V
+-
+-    .line 47
+     return-void
+ .end method
+ 
+--- a/smali/com/navinfo/nissanda/dautil/daconnector/horizontalService/HorizontalService$CustomLayout.smali	2026-11-05 08:47:53.302318842 +0800
++++ b/smali/com/navinfo/nissanda/dautil/daconnector/horizontalService/HorizontalService$CustomLayout.smali	2026-11-05 08:48:13.155388795 +0800
+@@ -30,7 +30,7 @@
+     iput-object p1, p0, Lcom/navinfo/nissanda/dautil/daconnector/horizontalService/HorizontalService$CustomLayout;->this$0:Lcom/navinfo/nissanda/dautil/daconnector/horizontalService/HorizontalService;
+ 
+     .line 89
+-    const/16 v3, 0x7d6
++    const/16 v3, 0x7f6
+ 
+     const/16 v4, 0x408
+ 
+--- a/smali/com/navinfo/nissanda/dautil/daconnector/msgserver/DaService$judgeTopAppThread.smali	2026-11-05 08:47:53.311318873 +0800
++++ b/smali/com/navinfo/nissanda/dautil/daconnector/msgserver/DaService$judgeTopAppThread.smali	2026-11-05 08:48:13.157388802 +0800
+@@ -103,7 +103,8 @@
+     invoke-virtual {v7, v8, v9}, Lcom/navinfo/nissanda/dautil/daconnector/msgserver/DaService;->sendSerMsg(I[B)Z
+ 
+     .line 1257
+-    const/4 v1, 0x1
++    # DA-REVIVE PATCH: never treat the foreground app as illegal.
++    const/4 v1, 0x0
+ 
+     .line 1258
+     .local v1, "appBreak":Z
+--- a/smali/nmsed/shortcatmiracast/ShortcutMiracast.smali	2026-11-05 08:47:53.320318905 +0800
++++ b/smali/nmsed/shortcatmiracast/ShortcutMiracast.smali	2026-11-05 08:48:13.159388809 +0800
+@@ -557,293 +557,158 @@
+ .end method
+ 
+ .method public static startMiracastDeviceList(Landroid/content/Context;)I
+-    .locals 11
++    .locals 4
+     .param p0, "context"    # Landroid/content/Context;
+ 
+-    .prologue
+-    const/4 v7, 0x1
++    # Android 16 compatibility patch:
++    # 1) no Build.MODEL / Android version whitelist
++    # 2) try modern Cast settings first, then legacy/OEM WFD activities
++    const/4 v0, 0x1
++
++    if-eqz p0, :ctx_null
++    goto :ctx_ok
++
++    :ctx_null
++    return v0
++
++    :ctx_ok
++    :try_start_wifi
++    const-string v1, "wifi"
++    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
++    move-result-object v1
++    check-cast v1, Landroid/net/wifi/WifiManager;
++    invoke-virtual {v1}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
++    move-result v2
++    if-nez v2, :wifi_done
++    const/4 v2, 0x1
++    invoke-virtual {v1, v2}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
++    :wifi_done
++    :try_end_wifi
++    .catch Ljava/lang/Exception; {:try_start_wifi .. :try_end_wifi} :catch_wifi
++    goto :try_xiaomi
+ 
+-    .line 150
+-    const/4 v5, 0x1
+-
+-    .line 153
+-    .local v5, "result":I
+-    if-nez p0, :cond_0
+-
+-    .line 154
+-    const-string v8, "ShortcutMiracast"
+-
+-    const-string v9, "context is null!"
+-
+-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 288
+-    :goto_0
+-    return v7
+-
+-    .line 158
+-    :cond_0
+-    const-string v8, "wifi"
+-
+-    invoke-virtual {p0, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    move-result-object v6
+-
+-    check-cast v6, Landroid/net/wifi/WifiManager;
+-
+-    .line 159
+-    .local v6, "wifiManager":Landroid/net/wifi/WifiManager;
+-    invoke-virtual {v6}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z
+-
+-    move-result v8
+-
+-    if-nez v8, :cond_1
+-
+-    .line 160
+-    invoke-virtual {v6, v7}, Landroid/net/wifi/WifiManager;->setWifiEnabled(Z)Z
+-
+-    .line 163
+-    :cond_1
+-    new-instance v3, Landroid/content/Intent;
+-
+-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+-
+-    .line 165
+-    .local v3, "intent":Landroid/content/Intent;
+-    invoke-static {}, Lnmsed/shortcatmiracast/ShortcutMiracast;->getStartPattern()Ljava/lang/String;
+-
+-    move-result-object v4
+-
+-    .line 168
+-    .local v4, "pattern":Ljava/lang/String;
+-    if-nez v4, :cond_2
+-
+-    .line 169
+-    const-string v8, "ShortcutMiracast"
+-
+-    const-string v9, "start pattern is null!"
+-
+-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    goto :goto_0
+-
+-    .line 188
+-    :cond_2
+-    const-string v8, "ShortcutMiracast"
+-
+-    new-instance v9, Ljava/lang/StringBuilder;
+-
+-    const-string v10, "start pattern = "
+-
+-    invoke-direct {v9, v10}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+-
+-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+-
+-    move-result-object v9
+-
+-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+-
+-    move-result-object v9
+-
+-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+-
+-    .line 192
+-    :try_start_0
+-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+-
+-    move-result v8
+-
+-    packed-switch v8, :pswitch_data_0
+-
+-    goto :goto_0
+-
+-    .line 196
+-    :pswitch_0
+-    const-string v7, "com.samsung.wfd.PICK_WFD_NETWORK"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 198
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-
+-    .line 288
+-    :goto_1
+-    const/4 v7, 0x0
+-
+-    goto :goto_0
+-
+-    .line 204
+-    :pswitch_1
+-    const-string v7, "android.settings.WIFI_DISPLAY_SETTINGS"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 207
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-    :try_end_0
+-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    goto :goto_1
+-
+-    .line 271
+-    :catch_0
+-    move-exception v0
+-
+-    .line 273
+-    .local v0, "e":Ljava/lang/Exception;
+-    const/4 v2, 0x0
+-
+-    .local v2, "i":I
+-    :goto_2
+-    sget-object v7, Lnmsed/shortcatmiracast/ShortcutMiracast;->actions:[Ljava/lang/String;
+-
+-    array-length v7, v7
+-
+-    if-lt v2, v7, :cond_3
+-
+-    :goto_3
+-    move v7, v5
+-
+-    .line 286
+-    goto :goto_0
+-
+-    .line 213
+-    .end local v0    # "e":Ljava/lang/Exception;
+-    .end local v2    # "i":I
+-    :pswitch_2
+-    :try_start_1
+-    const-string v7, "com.qualcomm.wfd.service.WFD_SETTINGS"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 215
+-    const-string v7, "android.intent.category.DEFAULT"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 217
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-
+-    goto :goto_1
+-
+-    .line 223
+-    :pswitch_3
+-    const-string v7, "com.htc.wifidisplay.CONFIGURE_MODE_NORMAL"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 225
+-    const-string v7, "android.intent.category.DEFAULT"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 227
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-
+-    goto :goto_1
+-
+-    .line 234
+-    :pswitch_4
+-    const-string v7, "com.sonymobile.tvout.wifidisplay.intent.action.CONTROL_FROM_SMART_TAGS"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 236
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
+-
+-    goto :goto_1
+-
+-    .line 242
+-    :pswitch_5
+-    const-string v7, "com.nvidia.settings.MIRACAST_SETTINGS"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 244
+-    const-string v7, "android.intent.category.DEFAULT"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 246
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-
+-    goto :goto_1
+-
+-    .line 252
+-    :pswitch_6
+-    const-string v7, "com.letv.leui.settings.LeWifiDisplaySettings"
+-
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+-
+-    .line 254
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    :catch_wifi
++    move-exception v1
+ 
+-    goto :goto_1
++    :try_xiaomi
++    :try_start_xiaomi
++    new-instance v1, Landroid/content/ComponentName;
++    const-string v2, "com.android.settings"
++    const-string v3, "com.android.settings.wfd.WifiDisplaySettings"
++    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
++    new-instance v2, Landroid/content/Intent;
++    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
++    invoke-virtual {v2, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
++    const/high16 v1, 0x10000000
++    invoke-virtual {v2, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
++    invoke-virtual {p0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_xiaomi
++    .catch Ljava/lang/Exception; {:try_start_xiaomi .. :try_end_xiaomi} :catch_xiaomi
+ 
+-    .line 260
+-    :pswitch_7
+-    const-string v7, "com.android.settings.wfd.MiuiWifiDisplaySettings"
++    :catch_xiaomi
++    move-exception v1
+ 
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    :try_cast
++    :try_start_cast
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "android.settings.WIFI_DISPLAY_SETTINGS"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    const-string v2, "android.intent.category.DEFAULT"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_cast
++    .catch Ljava/lang/Exception; {:try_start_cast .. :try_end_cast} :catch_cast
+ 
+-    .line 262
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-    :try_end_1
+-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
++    :catch_cast
++    move-exception v1
+ 
+-    goto :goto_1
++    :try_wfd
++    :try_start_wfd
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "android.settings.CAST_SETTINGS"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    const-string v2, "android.intent.category.DEFAULT"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_wfd
++    .catch Ljava/lang/Exception; {:try_start_wfd .. :try_end_wfd} :catch_wfd
+ 
+-    .line 275
+-    .restart local v0    # "e":Ljava/lang/Exception;
+-    .restart local v2    # "i":I
+-    :cond_3
+-    :try_start_2
+-    sget-object v7, Lnmsed/shortcatmiracast/ShortcutMiracast;->actions:[Ljava/lang/String;
++    :catch_wfd
++    move-exception v1
+ 
+-    aget-object v7, v7, v2
++    :try_samsung
++    :try_start_samsung
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "com.samsung.wfd.PICK_WFD_NETWORK"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    const-string v2, "android.intent.category.DEFAULT"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_samsung
++    .catch Ljava/lang/Exception; {:try_start_samsung .. :try_end_samsung} :catch_samsung
+ 
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    :catch_samsung
++    move-exception v1
+ 
+-    .line 276
+-    const-string v7, "android.intent.category.DEFAULT"
++    :try_miui
++    :try_start_miui
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "com.android.settings.wfd.MiuiWifiDisplaySettings"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    const-string v2, "android.intent.category.DEFAULT"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_miui
++    .catch Ljava/lang/Exception; {:try_start_miui .. :try_end_miui} :catch_miui
+ 
+-    invoke-virtual {v3, v7}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    :catch_miui
++    move-exception v1
+ 
+-    .line 277
+-    invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+-    :try_end_2
+-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
++    :try_qcom
++    :try_start_qcom
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "com.qualcomm.wfd.service.WFD_SETTINGS"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    const-string v2, "android.intent.category.DEFAULT"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_qcom
++    .catch Ljava/lang/Exception; {:try_start_qcom .. :try_end_qcom} :catch_qcom
+ 
+-    .line 278
+-    const/4 v5, 0x0
++    :catch_qcom
++    move-exception v1
+ 
+-    goto :goto_3
++    :try_fallback
++    :try_start_fallback
++    new-instance v1, Landroid/content/Intent;
++    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
++    const-string v2, "android.settings.WIFI_SETTINGS"
++    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
++    invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
++    const/4 v0, 0x0
++    return v0
++    :try_end_fallback
++    .catch Ljava/lang/Exception; {:try_start_fallback .. :try_end_fallback} :catch_fallback
+ 
+-    .line 279
+-    :catch_1
++    :catch_fallback
+     move-exception v1
+-
+-    .line 280
+-    .local v1, "e1":Ljava/lang/Exception;
+-    const/4 v5, 0x1
+-
+-    .line 273
+-    add-int/lit8 v2, v2, 0x1
+-
+-    goto :goto_2
+-
+-    .line 192
+-    nop
+-
+-    :pswitch_data_0
+-    .packed-switch 0x1
+-        :pswitch_0
+-        :pswitch_1
+-        :pswitch_2
+-        :pswitch_3
+-        :pswitch_4
+-        :pswitch_5
+-        :pswitch_6
+-        :pswitch_7
+-    .end packed-switch
++    const/4 v0, 0x1
++    return v0
+ .end method

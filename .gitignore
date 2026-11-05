@@ -1,7 +1,6 @@
+dist/
 *.apk
 *.idsig
-*.keystore
-*.jks
-build/
-out/
-dex/
+tools/apktool.jar
+tools/*.keystore
+deps/

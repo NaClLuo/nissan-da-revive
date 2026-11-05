@@ -215,7 +215,7 @@ DA 收到 `19 {1}` 后就会把画面切走/退出投屏。所以用户感觉“
 
 ## 9. 补丁 APK 改了什么
 
-产物：`NissanDA_Android16_patched.apk`（6.3 MB，v1/v2/v3 签名，SHA-256 见文末）。
+产物：`NissanDA_revive.apk`（6.3 MB，v1/v2/v3 签名，SHA-256 见文末）。
 
 ### 9.1 去掉机型白名单，重写投屏入口
 
@@ -412,7 +412,7 @@ int carWash = CommonConstant.carwashIndex.get(weather.getWashCarInfo()).intValue
 
 1. 备份原 App 数据（如果有）。
 2. 卸载原版 `com.autonavi.cvc.app.da`。补丁包用了新的自签名证书，**不能覆盖安装**。
-3. 允许“安装未知应用”，安装 `NissanDA_Android16_patched.apk`。
+3. 允许“安装未知应用”，安装 `NissanDA_revive.apk`。
 4. 首次启动会弹“此应用专为旧版 Android 打造”，点“仍然运行”。
 5. 授予电话状态、定位、悬浮窗权限。定位用于天气/GPS 时间；原版逻辑是“电话状态/定位任一拒绝就退出”，补丁只去掉了存储权限，没有改这个强制逻辑，所以首次启动请全部允许。悬浮窗权限用于强制横屏，拒绝也能投屏，但画面方向可能不对。
 
@@ -550,17 +550,21 @@ int carWash = CommonConstant.carwashIndex.get(weather.getWashCarInfo()).intValue
 
 | 文件 | 说明 |
 |---|---|
-| `NissanDA_Android16_patched.apk` | 已签名补丁包。从官方原版升级需先卸载；从上一版补丁可覆盖安装 |
+| `NissanDA_revive.apk` | 你自己的构建产物。从官方原版升级需先卸载（签名不同） |
+| `da-revive-patchpack-<日期>.zip` | CI 产出的补丁 smali 包 |
+| `patches/da-revive.patch` | 对原包的 unified diff |
 | `日产DA投屏逆向分析报告.md` | 本报告 |
 | `architecture.png` | 架构图 |
 
-补丁包校验：
+报告成文时的构建校验（该构建已不再分发，仅作记录）：
 
 ```
 SHA-256: 7ce74d025fc37a01436402e06636f02ff31ab3a7c985cc5018493123b1060358
 签名方案: v1 + v2 + v3
-签名主体: CN=Nissan DA Android16 Patch
+签名主体: CN=Nissan DA Android16 Patch（当时使用的自签名证书）
 ```
+
+`tools/apply.sh` 首次运行会自动生成一把新的 keystore，签名主体为 `CN=DA Revive`，因此你构建出的包与上面的哈希不同，也不能和旧包互相覆盖——升级前先卸载。
 
 > 重要提醒：这个补丁解决的是“App 在 Android 16 上能装、能打开投屏页、不再限制应用”这三件事，**不解决“Android 16 系统本身没有 Miracast”这件事**。前者是 App 层，后者是系统层。实机测试时请先确认手机系统设置里是否存在“无线显示/屏幕共享/投屏”入口。
 
@@ -610,11 +614,11 @@ java -cp "apktool-deps/*" brut.apktool.Main b apktool_out -o patched_unsigned.ap
 zipalign -f -p 4 patched_unsigned.apk patched_aligned.apk
 apksigner sign --ks nissan16.keystore --ks-key-alias nissan16 \
   --ks-pass pass:nissan123 --key-pass pass:nissan123 \
-  --out NissanDA_Android16_patched.apk patched_aligned.apk
+  --out NissanDA_revive.apk patched_aligned.apk
 
 # 5. 校验
-apksigner verify --verbose --print-certs NissanDA_Android16_patched.apk
-aapt2 dump badging NissanDA_Android16_patched.apk | head -5
+apksigner verify --verbose --print-certs NissanDA_revive.apk
+aapt2 dump badging NissanDA_revive.apk | head -5
 ```
 
 > 重新打包会改变资源索引和 DEX 校验和，但不会改变包名、版本号和协议；签名必须换新，所以从官方原版安装前要卸载。上一版补丁与本版同证书，可直接覆盖。

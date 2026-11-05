@@ -1,0 +1,103 @@
+name: build
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "补丁包版本号（留空则用 UTC 日期）"
+        required: false
+        default: ""
+      publish:
+        description: "发布到 Release（tag 用 v<version>）"
+        type: boolean
+        default: false
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  patchpack:
+    name: build patchpack
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Resolve Android SDK
+        run: |
+          set -euo pipefail
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          ANDROID_JAR="$(ls -d "$SDK"/platforms/android-*/android.jar | sort -V | tail -1)"
+          D8="$(ls -d "$SDK"/build-tools/*/d8 | sort -V | tail -1)"
+          test -f "$ANDROID_JAR"
+          test -x "$D8"
+          echo "ANDROID_JAR=$ANDROID_JAR" >>"$GITHUB_ENV"
+          echo "D8=$D8" >>"$GITHUB_ENV"
+          echo "android.jar : $ANDROID_JAR"
+          echo "d8          : $D8"
+
+      - name: Fetch support library
+        run: |
+          set -euo pipefail
+          curl -fsSL -o /tmp/support-core-ui.aar \
+            https://dl.google.com/dl/android/maven2/com/android/support/support-core-ui/25.3.1/support-core-ui-25.3.1.aar
+          mkdir -p deps
+          unzip -p /tmp/support-core-ui.aar classes.jar > deps/support-core-ui-25.3.1.jar
+          unzip -l deps/support-core-ui-25.3.1.jar | grep -q 'android/support/v4/view/ViewPager.class'
+          echo "SUPPORT_JAR=$PWD/deps/support-core-ui-25.3.1.jar" >>"$GITHUB_ENV"
+
+      - name: Fetch smali tools
+        run: |
+          set -euo pipefail
+          mvn -q -B -f tools/pom.xml dependency:copy-dependencies -DoutputDirectory="$PWD/deps"
+          echo "SMALI_CP=$(find "$PWD/deps" -name '*.jar' | tr '\n' ':')" >>"$GITHUB_ENV"
+
+      - name: Build patchpack
+        run: |
+          set -euo pipefail
+          VERSION="${{ inputs.version }}"
+          if [ -z "$VERSION" ]; then VERSION="$(date -u +%Y%m%d)"; fi
+          VERSION="$VERSION" tools/build-patchpack.sh
+          cp "dist/da-revive-patchpack-$VERSION.zip" dist/da-revive-patchpack.zip
+          echo "VERSION=$VERSION" >>"$GITHUB_ENV"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: da-revive-patchpack-${{ env.VERSION }}
+          path: dist/*.zip
+          if-no-files-found: error
+
+      - name: Publish release
+        if: inputs.publish || startsWith(github.ref, 'refs/tags/')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            TAG="${GITHUB_REF#refs/tags/}"
+          else
+            TAG="v${VERSION}"
+            git tag -f "$TAG" >/dev/null 2>&1 || true
+          fi
+          NOTES="自动构建产物，仅包含补丁 smali 包，不含原版 APK。
+
+          | 项 | 值 |
+          |---|---|
+          | 版本 | \`$VERSION\` |
+          | 提交 | \`$GITHUB_SHA\` |
+          | 内容 | \`com/autonavi/cvc/app/da/quick/*\`、\`com/autonavi/cvc/app/da/weather/WeatherFix*\` |
+
+          使用方法见仓库 README。"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" dist/*.zip --clobber
+          else
+            gh release create "$TAG" dist/*.zip --title "patchpack $TAG" --notes "$NOTES"
+          fi
