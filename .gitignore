@@ -1,0 +1,7 @@
+*.apk
+*.idsig
+*.keystore
+*.jks
+build/
+out/
+dex/
