@@ -386,25 +386,33 @@ int carWash = CommonConstant.carwashIndex.get(weather.getWashCarInfo()).intValue
 
 ---
 
-### 9.8 横屏双向自动旋转
+### 9.8 横屏方向与系统旋转锁定
 
-原包所有 Activity 都写死 `android:screenOrientation="landscape"`，只认一个横屏方向：手机朝左横置时画面正常，朝右横置时画面会倒过来。系统里开不开"自动旋转"都一样，因为 `landscape` 本身就是固定值，不走传感器。
+原包所有 Activity 都写死 `android:screenOrientation="landscape"`，只认一个横屏方向：手机朝左横置时画面正常，朝右横置时画面会倒过来。系统里开不开「自动旋转」都一样，因为 `landscape` 本身就是固定值，不走传感器。
 
-补丁把 7 个 Activity（`MainActivity`、`GuideAnim`、`WeatherActivity`、`CityListActivity`、`WebViewActivity`、`WebViewErrorActivity`、`AppPickerActivity`）统一改成 `sensorLandscape`：
+**第一步，Manifest 放开方向**。7 个 Activity 统一改成 `sensorLandscape`：
 
 | 取值 | 含义 | 结果 |
 |---|---|---|
 | `landscape`（原值，0） | 固定一个横屏方向 | 反向横置时画面颠倒 |
-| `sensorLandscape`（新值，6） | 横屏 + 反向横屏，跟随重力感应 | 两个横屏方向都能正立显示 |
+| `sensorLandscape`（6） | 横屏 + 反向横屏，跟随重力感应 | 两个方向都正立 |
 
-两个细节：
+不用 `fullSensor`：它会放行竖屏，而这个 App 的布局是按 16:9 横屏写死的（大量绝对坐标），转成竖屏直接错位。
 
-- **`sensorLandscape` 不受系统"自动旋转"开关影响**。这是 `sensor*` 系列与 `user*` 系列的区别：前者直接读传感器，后者才受用户锁定开关控制。所以用户在控制中心关掉自动旋转，App 依然会跟随手机翻转——这正是车机场景需要的。
-- **不用 `fullSensor`**。`fullSensor` 会允许竖屏，而这个 App 的布局是按 16:9 横屏写死的（大量绝对坐标、`DaTouchableRelativeLayout` 的固定分区），一旦转成竖屏会直接错位。`sensorLandscape` 把可选方向限制在两个横屏之间，不会出现竖屏。
+**第二步，让它听锁定开关**。`sensorLandscape` 的问题是 `sensor*` 系列直接读传感器，**不受用户「方向锁定」控制**——用户明明锁了屏，翻个手机画面还是转。所以新增 `OrientationFix`，在 `App.onCreate()` 里注册 `ActivityLifecycleCallbacks`，对每个 Activity 运行时改一次 `requestedOrientation`：
 
-翻转 180° 时不会重建 Activity：这些 Activity 的 `configChanges` 里本来就有 `orientation`，系统只回调 `onConfigurationChanged`，View 树原样保留。因为横屏正反两个方向的宽高完全一致，也不需要重新测量布局，只是整个窗口旋转 180°。已填的应用列表、当前页码、输入框内容都不会丢。
+| 系统锁定开关 | 设置的 orientation | 表现 |
+|---|---|---|
+| 关（可自动旋转） | `SENSOR_LANDSCAPE`（6） | 两个横屏方向都跟随手机 |
+| 开（已锁定） | `LANDSCAPE`（0）或 `REVERSE_LANDSCAPE`（8） | 固定一个方向，翻转手机不动 |
 
-`AppPickerActivity` 原本没有声明 `configChanges`，这次一并补成 `orientation|screenSize|smallestScreenSize`。它是纯代码构建的界面，个别 ROM 在翻转时会连带上报屏幕尺寸变化，触发重建，把用户还没保存的勾选清空；补上这两个 flag 后不会再重建。
+锁定状态下取哪个方向，看当前显示旋转：已经是 `ROTATION_270` 就用反向横屏，其余用正向横屏。**不会**回落到竖屏——用户如果在竖屏状态下锁的屏，App 仍然以横屏显示，因为竖屏会让布局彻底错位。
+
+用户中途拉动控制中心的锁定开关时，`ContentObserver` 监听 `Settings.System.ACCELEROMETER_ROTATION` 会立刻重算一次，不用退出重进。
+
+翻转 180° 时不重建 Activity：这些 Activity 的 `configChanges` 里本来就有 `orientation`，系统只回调 `onConfigurationChanged`，View 树原样保留。横屏正反两个方向宽高一致，也不需要重新测量。已填的应用列表、当前页码、输入框内容都不会丢。
+
+`AppPickerActivity` 原本没有 `configChanges`，这次一并补成 `orientation|screenSize|smallestScreenSize`。它是纯代码构建的界面，个别 ROM 在翻转时会连带上报屏幕尺寸变化，触发重建，把用户还没保存的勾选清空；补上这两个 flag 后不会再重建。
 
 ## 10. 安装与使用
 

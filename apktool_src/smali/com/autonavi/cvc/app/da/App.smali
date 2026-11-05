@@ -143,6 +143,9 @@
     .line 28
     invoke-direct {p0}, Lcom/autonavi/cvc/app/da/App;->InitApp()V
 
+    # DA-REVIVE PATCH: follow the system rotation lock for the landscape window.
+    invoke-static {p0}, Lcom/autonavi/cvc/app/da/quick/OrientationFix;->install(Landroid/content/Context;)V
+
     .line 29
     return-void
 .end method

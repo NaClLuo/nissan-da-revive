@@ -1,12 +1,13 @@
 # 补丁说明
 
-完整工程在 [`../apktool_src`](../apktool_src)，`apktool b` 直接出包。这个目录单独留下自己写的 3 个类的 Java 源码——工程里的 smali 是它们编译后的产物，改逻辑请改这里再重新生成，不要直接动 smali。
+完整工程在 [`../apktool_src`](../apktool_src)，`apktool b` 直接出包。这个目录单独留下自己写的 4 个类的 Java 源码——工程里的 smali 是它们编译后的产物，改逻辑请改这里再重新生成，不要直接动 smali。
 
 ```
 java/
   com/autonavi/cvc/app/da/quick/QuickDesk.java            桌面改造：投屏键 + 自选槽位
   com/autonavi/cvc/app/da/quick/AppPickerActivity.java    应用选择器（纯代码 UI）
   com/autonavi/cvc/app/da/weather/WeatherFix.java         天气数据源替换
+  com/autonavi/cvc/app/da/quick/OrientationFix.java       横屏跟随系统旋转锁定
 ```
 
 ## 重新生成 smali
@@ -32,6 +33,7 @@ cp smali_out/com/autonavi/cvc/app/da/weather/WeatherFix*.smali ../apktool_src/sm
 | `...ui/activity/MainActivity.smali` | `initDeskViewPager()` 末尾、`onResume()` | 各插一条 `invoke-static/range {p0 .. p0}, Lcom/autonavi/cvc/app/da/quick/QuickDesk;->overlay(Landroid/app/Activity;)V` |
 | `...weather/WeatherHelper.smali` | `getWeather(String, Listener, boolean)` | 方法体改为 `invoke-static {p0, p1, p2}, Lcom/autonavi/cvc/app/da/weather/WeatherFix;->getWeather(Ljava/lang/String;Ljava/lang/Object;Z)V` |
 | `...weather/model/Weather.smali` | `getWashCarInfo()` | 两处 `return null` 改为 `const-string v2, ""`；`desc` 赋值后补 `if-eqz` 判空 |
+| `...da/App.smali` | `onCreate()` 末尾 | 插一条 `invoke-static {p0}, Lcom/autonavi/cvc/app/da/quick/OrientationFix;->install(Landroid/content/Context;)V` |
 
 以上每处都在文件里留了 `# DA-REVIVE PATCH:` 注释，grep 一下就能定位。
 

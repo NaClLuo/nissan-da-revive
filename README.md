@@ -36,7 +36,7 @@
 
 ```
 apktool_src/   完整 apktool 工程（原始 2900+ smali + 全部改动）
-patch/java/    自己写的 3 个类的 Java 源码（apktool_src 里的 smali 由它编译而来）
+patch/java/    自己写的 4 个类的 Java 源码（apktool_src 里的 smali 由它编译而来）
 tools/         build.sh + 签名密钥
 report/        逆向分析报告
 docs/          架构图
@@ -57,7 +57,7 @@ docs/          架构图
 | 5 | `WeatherHelper` → `WeatherFix` | 数据源换成 open-meteo | 原接口全端口超时，`OnError()` 是空实现，首页永久转圈 |
 | 6 | `Weather.getWashCarInfo` | null 返回空串 + desc 判空 | 详情页 `intValue()` 空指针闪退 |
 | 7 | 新增 `QuickDesk` / `AppPickerActivity` | 右上角投屏键 + 12 个自选槽位 | 原 6 个图标写死，投屏入口太深 |
-| 8 | `AndroidManifest.xml` | 7 个 Activity `landscape` → `sensorLandscape` | 反着横置时画面颠倒 |
+| 8 | Manifest + 新增 `OrientationFix` | 横屏两个方向都能正立，且**跟随系统方向锁定** | 原来只认一个方向；只改 `sensorLandscape` 又无视锁定开关 |
 
 ---
 
