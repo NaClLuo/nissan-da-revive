@@ -22,6 +22,8 @@ SOFTWARE.
 
 ---
 
-This license covers only the files authored in this repository (patch/java,
-tools, patches, docs). It does not cover the original Nissan / AutoNavi
-application, its resources, or any binary built by combining the two.
+This license covers only the files authored by the repository owner
+(patch/java, tools, docs and the modifications marked DA-REVIVE PATCH).
+It does not cover the original Nissan / AutoNavi application, its decompiled
+output under apktool_src/ (smali, res, assets, lib), its resources, or any
+binary built by combining the two.
